@@ -1,0 +1,412 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #3c3c3c;
+  color: white;
+}
+
+main {
+  flex: 1;
+}
+
+.fa-brands {
+  size: 2px;
+}
+.site-container {
+  min-height: 100vh;
+}
+
+.rating span {
+  color: #ffc000;
+  display: inline-block;
+}
+
+.rating span p {
+  color: white;
+  margin-left: 2px;
+}
+
+.prodName,
+.aisleName {
+  color: white;
+  text-decoration: none;
+}
+
+.prod-card {
+  padding: 1rem;
+}
+
+.btn-yellow-black-txt {
+  background-color: #ffc000;
+  color: black;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: auto;
+  margin-bottom: 0.5rem;
+}
+
+.btn-yellow-black-txt-wide {
+  background-color: #ffc000;
+  color: black;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: 69%;
+  font-size: auto;
+  margin: 0.5rem;
+}
+
+.logo p {
+  font-size: 2rem;
+  display: inline;
+  font-weight: bold;
+}
+
+.logo {
+  display: flex;
+  align-self: flex-start;
+  align-items: baseline;
+}
+.logo i {
+  font-size: 1.5rem;
+}
+
+.aisle-card {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0px;
+}
+
+.topbar {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.prod-txt {
+  color: white;
+}
+
+
+.black-bg {
+  background-color: black;
+  border-radius: 1rem;
+}
+
+p {
+  color: white;
+}
+
+.amzn-link {
+  display: inline-block;
+  font-size: auto;
+  text-decoration: none;
+  color: #ffc000;
+}
+
+.amzn-link:hover {
+  color: #ffc000;
+  text-decoration: underline;
+}
+
+.rounded-border-black-bg {
+  border-radius: 2rem;
+  background-color: black;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.rounded-border-black-bg-small {
+  border-radius: 2rem;
+  background-color: black;
+  /* top right bottom left  */
+  padding: 0.5rem 2.5rem 1rem 2.5rem;
+  flex-wrap: wrap;
+  max-width: 600px;
+}
+
+.rounded-border-black-bg-wide {
+  width: 90%;
+  border-radius: 2rem;
+  background-color: black;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.shipping-menu {
+  border-radius: 2rem;
+  background-color: black;
+  /* top right bottom left  */
+  padding: 1rem 2.5rem 1rem 2.5rem;
+  flex-wrap: wrap;
+  width: 88%;
+  margin: 2rem;
+}
+.img-large {
+  border-radius: 1rem;
+  justify-self: flex-end;
+  max-width: 100%;
+}
+
+.white-txt {
+  color: white;
+}
+
+.black-bg-height-25 {
+  background-color: black;
+  height: 100%;
+}
+
+h3 {
+  color: white;
+  font-size: auto;
+  display: inline-block;
+}
+
+.cart-page-left-left-div {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 0px;
+  width: fit-content;
+}
+
+.cart-page-left-right-div {
+  padding-top: 15%;
+  width: max-content;
+}
+
+.col2 {
+  display: flex;
+  flex-basis: 50%;
+  align-content: flex-start;
+}
+.shop-now-img {
+  max-width: 75%;
+}
+
+.normal-ass-black-txt {
+  color: black;
+  text-decoration: none;
+}
+
+.normal-ass-white-txt {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-black-bg-white-txt {
+  background-color: black;
+  color: white;
+}
+.btn-black-bg-white-txt:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.one-line-child {
+  display: inline-block;
+}
+
+.one-line-parent {
+  white-space: nowrap;
+}
+
+.img-fluid {
+  background-color: black;
+  border: black;
+  max-height: 350px;
+  object-fit: cover;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.cart-page-h1-txt {
+  padding: 0px;
+  color: white;
+  font-size: xxx-large;
+}
+
+.cart-page-txt {
+  font-size: xx-large;
+}
+
+.prodName:hover {
+  color: white;
+}
+
+.btn-light {
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: auto;
+  margin-bottom: 0.5rem;
+}
+
+.normal-ass-white-txt:hover {
+  color: white;
+  text-decoration: underline;
+}
+.small-container {
+  max-width: 600px;
+}
+
+.center-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-returns-and-orders {
+  background-color: black;
+  color: white;
+  font-size: small;
+  text-align: left;
+  width: fit-content;
+}
+
+.btn-returns-and-orders h6{
+font-size: 1em;
+}
+
+.btn-returns-and-orders:hover {
+  color: white;
+}
+
+.topbar {
+  background-color: black;
+  max-height: 5rem;
+  min-height: fit-content;
+}
+
+#basic-nav-dropdown {
+  color: white;
+}
+
+#basic-nav-dropdown-item {
+  background-color: #3c3c3c;
+  padding: none;
+}
+
+.grey-bg-white-txt {
+  background-color: #3c3c3c;
+}
+
+.checkout-steps > div {
+  border-bottom: 0.2rem solid #a0a0a0;
+  color: #a0a0a0;
+}
+.checkout-steps > div.active {
+  border-bottom: 0.2rem solid #e89e4a;
+  color: #e89e4a;
+}
+
+.max-width-800px {
+  max-width: 800px;
+}
+
+.h6 {
+  color: white;
+}
+
+#p-wrap {
+  white-space: pre-line;
+}
+
+p:hover{
+  color: white;
+}
+
+.aisleName:hover{
+color: white;
+}
+
+.d-hub{
+  background-color: #ffc000;
+  padding: 0.25rem;
+  color: black;
+  border-radius: 2rem;
+}
+
+.d-hub:hover{
+  color: black;
+}
+
+.disclaimer{
+  display: inline-block;
+  font-size: auto;
+  background-color: rgb(241, 119, 119);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.place-order-parent{
+  max-width: 1200px;
+background-color: #2f2f2f;
+margin: auto;
+border-radius: 1rem;
+}
+
+.img-fluid{
+    max-height: 250px;
+  object-fit: cover;
+}
+/* media queries -------------------------------------- */
+@media only screen and (max-width: 1000px) {
+  .rounded-border-black-bg {
+    max-width: 600px;
+  }
+
+  .logo i {
+    font-size: 1rem;
+  }
+
+  .logo p {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    position: relative;
+    top: 5px;
+    left: -10px;
+  }
+
+  .btn-returns-and-orders {
+    position: relative;
+    left: -1rem;
+  }
+
+  .nav-link {
+    position: relative;
+    left: -1rem;
+  }
+
+  #basic-nav-dropdown {
+    position: relative;
+    left: -1rem;
+  }
+}
+
+footer{background-color: black;
+min-height: 2rem;
+margin-top: 2rem;}
+
+@media only screen and (max-width: 1200px) {
+    .prod-page-div{
+    max-width: 500px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  }
+}
