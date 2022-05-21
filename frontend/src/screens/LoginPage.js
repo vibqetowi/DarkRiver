@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import { Helmet } from "react-helmet-async";
 import { useContext, useEffect, useState } from "react";
 import { Store } from "../Store";
-import { getError } from "../util";
+import { getError } from "../utils";
 import { toast } from "react-toastify";
 
 export default function LoginPage() {

@@ -10,12 +10,9 @@
   "description": "simulated eccomerce website with react and mongodb",
   "main": "index.js",
   "devDependencies": {
-    "netlify-cli": "^8.14.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd frontend && npm install && npm run build",
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -33,9 +30,6 @@
   "bugs": {
     "url": "https://github.com/vibqetowi/DarkRiver/issues"
   },
-  "homepage": "https://github.com/vibqetowi/DarkRiver#readme",
-  "engines": {
-    "node": "16.15.0",
-    "npm": "8.5.5"
-  }
+  "homepage": "https://github.com/vibqetowi/DarkRiver#readme"
+
 }

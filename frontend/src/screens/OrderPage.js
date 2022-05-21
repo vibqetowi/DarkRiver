@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 import { Store } from '../Store';
 import CheckoutSteps from '../components/CheckoutSteps';
 import LoadingBox from '../components/LoadingBox';
-import { getError } from '../util';
+import { getError } from '../utils';
 import { Container } from 'react-bootstrap';
 
 const reducer = (state, action) => {

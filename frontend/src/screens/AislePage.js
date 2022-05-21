@@ -6,7 +6,7 @@ import Product from "../components/Product";
 import { Helmet } from "react-helmet-async";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-import { getError } from "../util";
+import { getError } from "../utils";
 import { useParams } from "react-router-dom";
 
 const reducer = (state, action) => {

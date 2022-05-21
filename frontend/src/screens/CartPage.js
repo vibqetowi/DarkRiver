@@ -15,7 +15,7 @@ import logger from "use-reducer-logger";
 import MessageBox from "../components/MessageBox";
 import Product from "../components/Product";
 import { Store } from "../Store";
-import { getError } from "../util";
+import { getError } from "../utils";
 
 export default function CartPage() {
   const navigate = useNavigate();
