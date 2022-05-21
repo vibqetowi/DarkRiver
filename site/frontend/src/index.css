@@ -96,7 +96,6 @@ main {
   color: white;
 }
 
-
 .black-bg {
   background-color: black;
   border-radius: 1rem;
@@ -216,6 +215,13 @@ h3 {
   display: inline-block;
 }
 
+.one-line-child-vertical-center{
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    top:33%;
+}
+
 .one-line-parent {
   white-space: nowrap;
 }
@@ -253,7 +259,6 @@ h3 {
 
 .normal-ass-white-txt:hover {
   color: white;
-  text-decoration: underline;
 }
 .small-container {
   max-width: 600px;
@@ -273,8 +278,8 @@ h3 {
   width: fit-content;
 }
 
-.btn-returns-and-orders h6{
-font-size: 1em;
+.btn-returns-and-orders h6 {
+  font-size: 1em;
 }
 
 .btn-returns-and-orders:hover {
@@ -321,26 +326,26 @@ font-size: 1em;
   white-space: pre-line;
 }
 
-p:hover{
+p:hover {
   color: white;
 }
 
-.aisleName:hover{
-color: white;
+.aisleName:hover {
+  color: white;
 }
 
-.d-hub{
+.d-hub {
   background-color: #ffc000;
   padding: 0.25rem;
   color: black;
   border-radius: 2rem;
 }
 
-.d-hub:hover{
+.d-hub:hover {
   color: black;
 }
 
-.disclaimer{
+.disclaimer {
   display: inline-block;
   font-size: auto;
   background-color: rgb(241, 119, 119);
@@ -350,16 +355,32 @@ color: white;
   color: black;
 }
 
-.place-order-parent{
+.place-order-parent {
   max-width: 1200px;
-background-color: #2f2f2f;
-margin: auto;
-border-radius: 1rem;
+  background-color: #2f2f2f;
+  margin: auto;
+  border-radius: 1rem;
 }
 
-.img-fluid{
-    max-height: 250px;
+.img-fluid {
+  max-height: 250px;
   object-fit: cover;
+}
+
+.max-width-1000px {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.smoll-img {
+  max-height: 150px;
+  max-width: 150px;
+  object-fit: cover;
+}
+
+.items-stacked {
+  flex-direction: "row";
+  flex: 1;
 }
 /* media queries -------------------------------------- */
 @media only screen and (max-width: 1000px) {
@@ -397,16 +418,17 @@ border-radius: 1rem;
   }
 }
 
-footer{background-color: black;
-min-height: 2rem;
-margin-top: 2rem;}
+footer {
+  background-color: black;
+  min-height: 2rem;
+  margin-top: 2rem;
+}
 
 @media only screen and (max-width: 1200px) {
-    .prod-page-div{
+  .prod-page-div {
     max-width: 500px;
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-
+    margin-left: auto;
+    margin-right: auto;
   }
 }
