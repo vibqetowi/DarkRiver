@@ -8,11 +8,11 @@
   "version": "1.0.0",
   "description": "simulated eccomerce website with react and mongodb",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "netlify-cli": "^8.14.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd frontend && npm install && npm run build",
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
