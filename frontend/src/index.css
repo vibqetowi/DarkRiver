@@ -270,6 +270,7 @@ h3 {
   align-items: center;
 }
 
+
 .btn-returns-and-orders {
   background-color: black;
   color: white;
@@ -353,6 +354,7 @@ p:hover {
   border-radius: 1rem;
   margin-bottom: 1rem;
   color: black;
+  width: 80%;
 }
 
 .place-order-parent {

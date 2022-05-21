@@ -101,10 +101,13 @@ function App() {
             <div className="center-contents">
               {" "}
               <div className="disclaimer">
-                This is not a real website, read more in{" "}
-                <Link to="/about" className="amzn-link">
-                  about page
-                </Link>{" "}
+                <div className="center-contents">
+                  {" "}
+                  This is not a real website, read more in our&nbsp;{" "}
+                  <Link to="/about" className="amzn-link">
+                    about page
+                  </Link>{" "}
+                </div>
               </div>
             </div>
 
@@ -127,7 +130,7 @@ function App() {
           </main>
           <footer>
             <br></br>
-            <div className="text-center">&#169; None but don't tell Amazon</div>
+            <div className="text-center">&#169; Not for commercial use, Amazon might sue us all</div>
           </footer>
         </div>
       </BrowserRouter>

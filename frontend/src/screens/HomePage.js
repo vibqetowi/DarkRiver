@@ -83,7 +83,7 @@ export default function HomePage() {
           {loading0 ? (
             <LoadingBox />
           ) : error0 ? (
-            <MessageBox variant="danger">{error0}</MessageBox>
+            <MessageBox variant="danger">could not load product</MessageBox>
           ) : (
             <Row>
               {products.map((product) => (
@@ -102,7 +102,7 @@ export default function HomePage() {
           {loading1 ? (
             <LoadingBox />
           ) : error1 ? (
-            <MessageBox variant="danger">{error1}</MessageBox>
+            <MessageBox variant="danger">could not load aisle</MessageBox>
           ) : (
             <Row>
               {aisles.map((aisle) => (
