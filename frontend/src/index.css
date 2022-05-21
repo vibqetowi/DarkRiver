@@ -62,7 +62,7 @@ main {
 }
 
 .logo p {
-  font-size: 2vw;
+  font-size: 2rem;
   display: inline;
   font-weight: bold;
 }
@@ -74,7 +74,7 @@ main {
   padding: 0.5rem;
 }
 .logo i {
-  font-size: 1.5vw;
+  font-size: 1.5rem;
 }
 
 .aisle-card {
@@ -179,22 +179,31 @@ h3 {
 }
 
 .cart-page-left-left-div {
-  padding-top: 5%;
-  padding-left: 10%;
-  padding-right: 0px;
   width: fit-content;
+    display: inline-block;
+    max-width: 400px;
+    margin-left: 2rem;
+    margin-top: 5rem;
+    font-size: auto;
 }
+
 
 .cart-page-left-right-div {
   padding-top: 15%;
   width: max-content;
 }
 
+
 .col2 {
   display: flex;
   flex-basis: 50%;
   align-content: flex-start;
 }
+.black-bg-max-width-500px {
+  background-color: black;
+  max-width: 500px;
+}
+
 .shop-now-img {
   max-width: 75%;
 }
@@ -228,6 +237,8 @@ h3 {
   position: absolute;
   top: 33%;
 }
+
+
 
 .one-line-parent {
   white-space: nowrap;
@@ -474,9 +485,15 @@ td {
   color: white;
 }
 
-.user-info-dropdown{
+.user-info-dropdown {
   margin-left: 1rem;
+  margin-top: 1rem;
 }
+
+.stack-contents-parent {
+  display: grid;
+}
+
 /* media queries -------------------------------------- */
 @media only screen and (max-width: 1000px) {
   .rounded-border-black-bg {
@@ -498,6 +515,12 @@ td {
   }
 }
 
+
+@media only screen and (min-width: 1200px) {
+.screen-500px-stack {
+  white-space: nowrap;
+}
+}
 @media only screen and (max-width: 1200px) {
   .prod-page-div {
     max-width: 500px;
@@ -514,5 +537,21 @@ td {
 
   .one-line-when-collapse-child {
     display: inline-block;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .shop-now-img {
+    margin-top: 4rem;
+  }
+
+  .cart-page-left-left-div {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1em;
+  }
+
+  .screen-500px-stack {
+    display: grid;
   }
 }

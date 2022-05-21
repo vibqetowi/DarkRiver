@@ -55,15 +55,18 @@ export default function CartPage() {
         <Col xl={8} className="black-bg">
           {cartItems.length === 0 ? (
             <div className="col2">
-              <div className="cart-page-left-left-div">
+              <div className="screen-500px-stack">
+                <div className="cart-page-left-left-div">
                 <img src="/images/shopNow.jpg" className="shop-now-img"></img>
               </div>
-              <div className="cart-page-left-right-div">
+              <div className="cart-page-left-left-div">
                 <h3>Your DarkRiver Cart is empty </h3> <br></br>
                 <Link to="/" className="amzn-link ">
                   Shop today's deal
                 </Link>
               </div>
+              </div>
+              
             </div>
           ) : (
             <>
@@ -80,10 +83,7 @@ export default function CartPage() {
                   <ListGroup.Item className="black-bg" key={item._id}>
                     <Row className="align-items-center">
                       <Col xl={4} className="black-bg">
-                        <Link
-                         
-                          to={`/dp/${item.slug}`}
-                        >
+                        <Link to={`/dp/${item.slug}`}>
                           {" "}
                           <img
                             src={item.image}
@@ -93,7 +93,10 @@ export default function CartPage() {
                         </Link>
                       </Col>
                       <Col xl={5}>
-                        <Link to={`/product/${item.slug}`} className="normal-ass-white-txt"></Link>
+                        <Link
+                          to={`/product/${item.slug}`}
+                          className="normal-ass-white-txt"
+                        ></Link>
                         <div className="one-line-parent">
                           <p className="cart-page-txt"> {item.name}</p>
                           <p>
