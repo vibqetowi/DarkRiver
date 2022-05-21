@@ -20,7 +20,7 @@ import ShippingPage from "./screens/ShippingPage";
 import SignupPage from "./screens/SignupPage";
 import PaymentMethodPage from "./screens/PaymentMethodPage";
 import AboutPage from "./screens/AboutPage";
-import OrderPage from "./screens/OrderPage";
+import OrderPage from "./screens/Checkout";
 import OrderDetailsPage from "./screens/OrderDetailsPage";
 
 function App() {
@@ -50,7 +50,6 @@ function App() {
                     </span>
                   </Navbar.Brand>
                 </LinkContainer>
-
                 <LinkContainer to="/myorders">
                   <Button variant="returns-and-orders">
                     Returns <br></br>
@@ -75,7 +74,7 @@ function App() {
                     </Link>
                   </NavDropdown>
                 ) : (
-                  <Link className="nav-link" to="/signin">
+                  <Link className="nav-link" to="/login">
                     <Button variant="returns-and-orders">
                       Hello, Sign in <br></br>
                       <h6>
@@ -103,10 +102,13 @@ function App() {
               <div className="disclaimer">
                 <div className="center-contents">
                   {" "}
-                  This is not a real website, read more in our&nbsp;{" "}
-                  <Link to="/about" className="amzn-link">
-                    about page
-                  </Link>{" "}
+                  <span>
+                    {" "}
+                    <Link to="/about" className="not-real-site-txt">
+                      This is not a real website, read more in our{" "}
+                      <span className="amzn-link">about page</span>
+                    </Link>{" "}
+                  </span>
                 </div>
               </div>
             </div>
@@ -118,7 +120,7 @@ function App() {
                 <Route path="/dp/:slug" element={<ProductPage />} />
                 <Route path="/seller/:brand" element={<SellerPage />} />
                 <Route path="/aisle/:slug" element={<AislePage />} />
-                <Route path="/signin" element={<LoginPage />} />
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="/shipping" element={<ShippingPage />} />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/payment" element={<PaymentMethodPage />} />
@@ -130,7 +132,14 @@ function App() {
           </main>
           <footer>
             <br></br>
-            <div className="text-center">&#169; Not for commercial use, Amazon might sue us all</div>
+            {/* <h1 className="square-logo">DR</h1> */}
+
+            <div className="text-center">
+              <p className="copyright-txt">
+                {" "}
+                &#169; Not for commercial use, Amazon might sue us all
+              </p>
+            </div>
           </footer>
         </div>
       </BrowserRouter>

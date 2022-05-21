@@ -22,7 +22,7 @@ export default function ShippingPage() {
   );
   useEffect(() => {
     if (!userInfo) {
-      navigate("/signin?redirect=/shipping");
+      navigate("/login?redirect=/shipping");
     }
   }, [userInfo, navigate]);
   const [country, setCountry] = useState(shippingAddress.country || "");

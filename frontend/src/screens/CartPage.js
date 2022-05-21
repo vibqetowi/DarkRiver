@@ -40,7 +40,7 @@ export default function CartPage() {
   };
 
   const checkoutHandler = () => {
-    navigate("/signin?redirect=/shipping");
+    navigate("/login?redirect=/shipping");
   };
 
   const subtotal = cartItems.reduce((a, c) => a + c.price * c.quantity, 0);
@@ -80,17 +80,20 @@ export default function CartPage() {
                   <ListGroup.Item className="black-bg" key={item._id}>
                     <Row className="align-items-center">
                       <Col xl={4} className="black-bg">
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="img-fluid rounded img-thumbnail"
-                        ></img>
                         <Link
-                          className="normal-ass-white-txt"
-                          to={`/product/${item.slug}`}
-                        ></Link>
+                         
+                          to={`/dp/${item.slug}`}
+                        >
+                          {" "}
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="img-fluid rounded img-thumbnail"
+                          ></img>
+                        </Link>
                       </Col>
                       <Col xl={5}>
+                        <Link to={`/product/${item.slug}`} className="normal-ass-white-txt"></Link>
                         <div className="one-line-parent">
                           <p className="cart-page-txt"> {item.name}</p>
                           <p>
@@ -98,7 +101,7 @@ export default function CartPage() {
                               className="normal-ass-white-txt"
                               to={`/seller/${item.brand}`}
                             >
-                              sold by {item.brand}
+                              sold by <p className="amzn-link">{item.brand}</p>
                             </Link>
                           </p>
                           <p className="cart-page-txt"> ${item.price}</p>
@@ -154,17 +157,13 @@ export default function CartPage() {
                     <br></br>
                     <h3>
                       Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{" "}
-                      items) : $
-                      {subtotal}
+                      items) : ${subtotal}
                     </h3>
                   </ListGroup.Item>
                   <ListGroupItem className="black-bg">
-                    {subtotal <
-                    35 ? (
+                    {subtotal < 35 ? (
                       <p>
-                        add $
-                        {35 -
-                          subtotal}
+                        add ${35 - subtotal}
                         &nbsp;of items to get free shipping
                       </p>
                     ) : (

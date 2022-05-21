@@ -97,7 +97,7 @@ export default function SignupPage() {
           </div>
           <div className="mb-3">
             Already have an account?{" "}
-            <Link className="amzn-link" to={`/signin?redirect=${redirect}`}>
+            <Link className="amzn-link" to={`/login?redirect=${redirect}`}>
               Sign-In
             </Link>
           </div>

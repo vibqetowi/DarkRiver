@@ -34,6 +34,7 @@ main {
 .aisleName {
   color: white;
   text-decoration: none;
+  font-size: auto;
 }
 
 .prod-card {
@@ -61,7 +62,7 @@ main {
 }
 
 .logo p {
-  font-size: 2rem;
+  font-size: 2vw;
   display: inline;
   font-weight: bold;
 }
@@ -72,7 +73,7 @@ main {
   align-items: baseline;
 }
 .logo i {
-  font-size: 1.5rem;
+  font-size: 1.5vw;
 }
 
 .aisle-card {
@@ -85,6 +86,7 @@ main {
 .topbar {
   padding: 1rem;
   margin-bottom: 2rem;
+  width: screen;
 }
 
 .card-img-top {
@@ -215,11 +217,11 @@ h3 {
   display: inline-block;
 }
 
-.one-line-child-vertical-center{
-    display: inline-block;
-    vertical-align: top;
-    position: absolute;
-    top:33%;
+.one-line-child-vertical-center {
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  top: 33%;
 }
 
 .one-line-parent {
@@ -270,19 +272,17 @@ h3 {
   align-items: center;
 }
 
-
 .btn-returns-and-orders {
   background-color: black;
   color: white;
-  font-size: small;
+  font-size: 2vw;
   text-align: left;
   width: fit-content;
 }
 
-.btn-returns-and-orders h6 {
-  font-size: 1em;
+.btn-returns-and-orders h6{
+  font-size: 2.5vw;
 }
-
 .btn-returns-and-orders:hover {
   color: white;
 }
@@ -340,10 +340,27 @@ p:hover {
   padding: 0.25rem;
   color: black;
   border-radius: 2rem;
+  padding-top: none;
+  padding-bottom: none;
 }
 
 .d-hub:hover {
   color: black;
+}
+
+.square-logo {
+  background-color: #ffc000;
+  padding-left: 0.5rem;
+  padding-right: 1.5rem;
+  color: black;
+  border-radius: 1.5rem;
+  width: fit-content;
+  font-size: 250px;
+  font-weight: bold;
+  margin: auto;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  letter-spacing: -1rem;
 }
 
 .disclaimer {
@@ -384,6 +401,38 @@ p:hover {
   flex-direction: "row";
   flex: 1;
 }
+
+footer {
+  background-color: black;
+  min-height: 2rem;
+  margin-top: 2rem;
+}
+
+.order-summary-col {
+  min-width: 22rem;
+}
+
+.paypal {
+  max-width: 22rem;
+  background-color: black;
+  border-radius: 2rem;
+  border: solid black 1rem;
+}
+
+.not-real-site-txt {
+  color: black;
+  font-size: auto;
+  text-decoration: none;
+}
+
+.not-real-site-txt :hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.copyright-txt{
+  font-size: 11px;
+}
 /* media queries -------------------------------------- */
 @media only screen and (max-width: 1000px) {
   .rounded-border-black-bg {
@@ -418,12 +467,12 @@ p:hover {
     position: relative;
     left: -1rem;
   }
-}
 
-footer {
-  background-color: black;
-  min-height: 2rem;
-  margin-top: 2rem;
+  .small-screen-center-contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -434,3 +483,13 @@ footer {
     margin-right: auto;
   }
 }
+
+@media only screen and (min-width: 500px) {
+
+    .btn-returns-and-orders{
+      font-size: 0.75rem;
+    }
+    .btn-returns-and-orders h6{
+      font-size: 0.75rem;
+    }
+  }

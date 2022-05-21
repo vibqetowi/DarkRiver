@@ -143,9 +143,12 @@ export default function OrderScreen() {
           <Helmet>
             <title>Order {orderId}</title>
           </Helmet>
-          <h2 className="my-3">Order #{orderId}</h2>
+          <h3 className="my-3">
+            {" "}
+            Order #{orderId}
+          </h3>
           <Row>
-            <Col md={8}>
+            <Col xl={8}>
               <Card className="black-bg">
                 <Card.Body>
                   <Card.Title>Shipping</Card.Title>
@@ -225,70 +228,77 @@ export default function OrderScreen() {
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={4}>
-              <Card className="black-bg">
-                <Card.Body>
-                  <Card.Title>Order Summary</Card.Title>
-                  <ListGroup variant="flush">
-                    <ListGroup.Item className="black-bg">
-                      <Row>
-                        <Col className="normal-ass-white-txt">Items</Col>
-                        <Col className="normal-ass-white-txt">
-                          ${order.itemsPrice.toFixed(2)}
-                        </Col>
-                      </Row>
-                    </ListGroup.Item>
-                    <ListGroup.Item className="black-bg">
-                      <Row>
-                        <Col className="normal-ass-white-txt">Shipping</Col>
-                        <Col className="normal-ass-white-txt">
-                          ${order.shippingPrice.toFixed(2)}
-                        </Col>
-                      </Row>
-                    </ListGroup.Item>
-                    <ListGroup.Item className="black-bg">
-                      <Row>
-                        <Col className="normal-ass-white-txt">Tax</Col>
-                        <Col className="normal-ass-white-txt">
-                          ${order.taxPrice.toFixed(2)}
-                        </Col>
-                      </Row>
-                    </ListGroup.Item>
-                    <ListGroup.Item className="black-bg">
-                      <Row>
-                        <Col>
-                          <strong className="normal-ass-white-txt">
-                            {" "}
-                            Order Total
-                          </strong>
-                        </Col>
-                        <Col>
-                          <strong className="normal-ass-white-txt">
-                            ${order.totalPrice.toFixed(2)}
-                          </strong>
-                        </Col>
-                      </Row>
-                    </ListGroup.Item>
-                    {!order.isPaid && (
-                      <ListGroup.Item>
-                        {isPending ? (
-                          <LoadingBox />
-                        ) : (
-                          <div>
-                            <PayPalButtons
-                              createOrder={createOrder}
-                              onApprove={onApprove}
-                              onError={onError}
-                            ></PayPalButtons>
-                          </div>
-                        )}
-                        {loadingPay && <LoadingBox></LoadingBox>}
+            <div className="small-screen-center-contents">
+              {" "}
+              <Col xl={4} className="order-summary-col">
+                <Card className="black-bg">
+                  <Card.Body>
+                    <Card.Title>Order Summary</Card.Title>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item className="black-bg">
+                        <Row>
+                          <Col className="normal-ass-white-txt">Items</Col>
+                          <Col className="normal-ass-white-txt">
+                            &emsp;&emsp;${order.itemsPrice.toFixed(2)}
+                          </Col>
+                        </Row>
                       </ListGroup.Item>
-                    )}
-                  </ListGroup>
-                </Card.Body>
-              </Card>
-            </Col>
+                      <ListGroup.Item className="black-bg">
+                        <Row>
+                          <Col className="normal-ass-white-txt">Shipping</Col>
+                          <Col className="normal-ass-white-txt">
+                            &emsp;&emsp; ${order.shippingPrice.toFixed(2)}
+                          </Col>
+                        </Row>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="black-bg">
+                        <Row>
+                          <Col className="normal-ass-white-txt">Tax</Col>
+                          <Col className="normal-ass-white-txt">
+                            &emsp;&emsp; ${order.taxPrice.toFixed(2)}
+                          </Col>
+                        </Row>
+                      </ListGroup.Item>
+                      <ListGroup.Item className="black-bg">
+                        <Row>
+                          <Col>
+                            <strong className="normal-ass-white-txt">
+                              {" "}
+                              Order Total
+                            </strong>
+                          </Col>
+                          <Col>
+                            <strong className="normal-ass-white-txt">
+                              &emsp;&emsp;${order.totalPrice.toFixed(2)}
+                            </strong>
+                          </Col>
+                        </Row>
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Card.Body>
+                </Card>
+                <Card className="paypal">
+                  {" "}
+                  {!order.isPaid && (
+                    <ListGroup.Item>
+                      {isPending ? (
+                        <LoadingBox />
+                      ) : (
+                        <div>
+                          <PayPalButtons
+                            createOrder={createOrder}
+                            onApprove={onApprove}
+                            onError={onError}
+                          ></PayPalButtons>
+                          <p className="normal-ass-black-txt">paypal email: johndoe@dmail.com, psw: jd123456</p>
+                        </div>
+                      )}
+                      {loadingPay && <LoadingBox></LoadingBox>}
+                    </ListGroup.Item>
+                  )}
+                </Card>
+              </Col>
+            </div>
           </Row>
         </Container>
       </div>
