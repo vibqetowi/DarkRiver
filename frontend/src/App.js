@@ -23,6 +23,7 @@ import AboutPage from "./screens/AboutPage";
 import OrderPage from "./screens/Checkout";
 import OrderDetailsPage from "./screens/OrderDetailsPage";
 import OrderHistoryPage from "./screens/OrderHistoryPage";
+import UserProfilePage from "./screens/UserProfilePage";
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -54,23 +55,23 @@ function App() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto  w-100  justify-content-end">
-                    <LinkContainer to="/myorders">
-                      <Button variant="returns-and-orders">
-                        <div className="one-line-when-collapse-parent">
-                          <div className="one-line-when-collapse-child">
-                            Returns&nbsp; <br />
-                          </div>
-                          <div className="one-line-when-collapse-child">
-                            <h6>
-                              <b> &amp;Orders</b>
-                            </h6>
-                          </div>
-                        </div>
-                      </Button>
-                    </LinkContainer>
-
                     {userInfo ? (
-                      <NavDropdown
+                      <> <LinkContainer to="/order/history">
+                        <Button variant="returns-and-orders">
+                          <div className="one-line-when-collapse-parent">
+                            <div className="one-line-when-collapse-child">
+                              Returns&nbsp; <br />
+                            </div>
+                            <div className="one-line-when-collapse-child">
+                              <h6>
+                                <b> &amp;Orders</b>
+                              </h6>
+                            </div>
+                          </div>
+                        </Button>
+                      </LinkContainer>
+
+                        <NavDropdown
                         title={userInfo.name}
                         id="basic-nav-dropdown"
                         className="user-info-dropdown"
@@ -86,9 +87,24 @@ function App() {
                         >
                           Sign Out
                         </Link>
-                      </NavDropdown>
+                      </NavDropdown></>
+                     
                     ) : (
-                      <Link className="nav-link" to="/login">
+                      <> <LinkContainer to="/login">
+                        <Button variant="returns-and-orders">
+                          <div className="one-line-when-collapse-parent">
+                            <div className="one-line-when-collapse-child">
+                              Returns&nbsp; <br />
+                            </div>
+                            <div className="one-line-when-collapse-child">
+                              <h6>
+                                <b> &amp;Orders</b>
+                              </h6>
+                            </div>
+                          </div>
+                        </Button>
+                      </LinkContainer>
+                           <Link className="nav-link" to="/login">
                         <Button variant="hello-sign-in">
                           <div className="one-line-when-collapse-parent">
                             <div className="one-line-when-collapse-child">
@@ -102,6 +118,8 @@ function App() {
                           </div>
                         </Button>
                       </Link>
+                      </>
+                     
                     )}
 
                     <Link to="/cart" className="nav-link">
@@ -161,7 +179,8 @@ function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/checkout" element={<OrderPage />} />
                 <Route path="/order/:id" element={<OrderDetailsPage />} />
-                <Route path="/myorders" element={<OrderHistoryPage />} />
+                <Route path="/order/history" element={<OrderHistoryPage />} />
+                <Route path="/profile" element={<UserProfilePage />} />
               </Routes>
             </Container>
           </main>

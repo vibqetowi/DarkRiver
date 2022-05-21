@@ -63,7 +63,7 @@ export default function OrderHistoryPage() {
         {loading ? (
           <LoadingBox></LoadingBox>
         ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
+          <MessageBox variant="danger">not logged in</MessageBox>
         ) : (
           <table className="table">
             <thead>
