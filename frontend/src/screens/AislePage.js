@@ -63,6 +63,7 @@ export default function AislePage() {
         {slug}
         {name}
         <h1>under construction</h1>
+        <h2>Issue: all products are listed</h2>
         <div className="fproducts">
           {loading0 ? (
             <LoadingBox />

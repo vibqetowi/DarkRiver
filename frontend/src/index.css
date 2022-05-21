@@ -71,6 +71,7 @@ main {
   display: flex;
   align-self: flex-start;
   align-items: baseline;
+  padding: 0.5rem;
 }
 .logo i {
   font-size: 1.5vw;
@@ -84,9 +85,12 @@ main {
 }
 
 .topbar {
-  padding: 1rem;
   margin-bottom: 2rem;
+  padding-left: 1rem;
   width: screen;
+  background-color: black;
+
+  min-height: fit-content;
 }
 
 .card-img-top {
@@ -124,6 +128,7 @@ p {
   background-color: black;
   padding: 1rem;
   flex-wrap: wrap;
+  min-width: fit-content;
 }
 
 .rounded-border-black-bg-small {
@@ -272,25 +277,37 @@ h3 {
   align-items: center;
 }
 
+.fa {
+  size: auto;
+}
+
 .btn-returns-and-orders {
   background-color: black;
   color: white;
-  font-size: 2vw;
   text-align: left;
   width: fit-content;
+  margin-right: 1rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  max-height: 5rem;
 }
 
-.btn-returns-and-orders h6{
-  font-size: 2.5vw;
+.btn-hello-sign-in {
+  background-color: black;
+  color: white;
+  text-align: left;
+  width: fit-content;
+  margin-right: 1rem;
+  font-size: 1rem;
+  max-height: 5rem;
 }
-.btn-returns-and-orders:hover {
+
+.btn-hello-sign-in:hover {
   color: white;
 }
 
-.topbar {
-  background-color: black;
-  max-height: 5rem;
-  min-height: fit-content;
+.btn-returns-and-orders:hover {
+  color: white;
 }
 
 #basic-nav-dropdown {
@@ -369,7 +386,8 @@ p:hover {
   background-color: rgb(241, 119, 119);
   padding: 0.5rem;
   border-radius: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem;
+  margin-bottom: 2rem;
   color: black;
   width: 80%;
 }
@@ -392,9 +410,11 @@ p:hover {
 }
 
 .smoll-img {
-  max-height: 150px;
-  max-width: 150px;
+  height: 150px;
+  width: 150px;
   object-fit: cover;
+  padding: 0.5rem;
+  background-color: black;
 }
 
 .items-stacked {
@@ -430,8 +450,32 @@ footer {
   color: black;
 }
 
-.copyright-txt{
+.copyright-txt {
   font-size: 11px;
+}
+
+th {
+  color: white;
+}
+
+td {
+  color: white;
+}
+
+.me-auto {
+  padding-left: 1rem;
+  background-color: black;
+}
+
+.cart-logo-container {
+  padding: 1rem;
+  padding-bottom: none;
+  white-space: nowrap;
+  color: white;
+}
+
+.user-info-dropdown{
+  margin-left: 1rem;
 }
 /* media queries -------------------------------------- */
 @media only screen and (max-width: 1000px) {
@@ -445,27 +489,6 @@ footer {
 
   .logo p {
     font-size: 1.5rem;
-  }
-
-  .logo {
-    position: relative;
-    top: 5px;
-    left: -10px;
-  }
-
-  .btn-returns-and-orders {
-    position: relative;
-    left: -1rem;
-  }
-
-  .nav-link {
-    position: relative;
-    left: -1rem;
-  }
-
-  #basic-nav-dropdown {
-    position: relative;
-    left: -1rem;
   }
 
   .small-screen-center-contents {
@@ -484,12 +507,12 @@ footer {
   }
 }
 
-@media only screen and (min-width: 500px) {
-
-    .btn-returns-and-orders{
-      font-size: 0.75rem;
-    }
-    .btn-returns-and-orders h6{
-      font-size: 0.75rem;
-    }
+@media only screen and (max-width: 700px) {
+  .one-line-when-collapse-parent {
+    white-space: nowrap;
   }
+
+  .one-line-when-collapse-child {
+    display: inline-block;
+  }
+}

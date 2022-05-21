@@ -22,6 +22,7 @@ import PaymentMethodPage from "./screens/PaymentMethodPage";
 import AboutPage from "./screens/AboutPage";
 import OrderPage from "./screens/Checkout";
 import OrderDetailsPage from "./screens/OrderDetailsPage";
+import OrderHistoryPage from "./screens/OrderHistoryPage";
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -39,8 +40,8 @@ function App() {
       <BrowserRouter>
         <div className="d-flex flex-column site-container">
           <header>
-            <Navbar variant="dark" className="topbar">
-              <Container fluid>
+            <Navbar bg="black" variant="dark" expand="md" className="topbar">
+              <Container>
                 <LinkContainer to="/">
                   <Navbar.Brand>
                     <span className="logo">
@@ -50,60 +51,93 @@ function App() {
                     </span>
                   </Navbar.Brand>
                 </LinkContainer>
-                <LinkContainer to="/myorders">
-                  <Button variant="returns-and-orders">
-                    Returns <br></br>
-                    <h6>
-                      <b> &amp;Orders</b>
-                    </h6>
-                  </Button>
-                </LinkContainer>
-
-                {userInfo ? (
-                  <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
-                    <LinkContainer to="/profile">
-                      <NavDropdown.Item>User Profile</NavDropdown.Item>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="me-auto  w-100  justify-content-end">
+                    <LinkContainer to="/myorders">
+                      <Button variant="returns-and-orders">
+                        <div className="one-line-when-collapse-parent">
+                          <div className="one-line-when-collapse-child">
+                            Returns&nbsp; <br />
+                          </div>
+                          <div className="one-line-when-collapse-child">
+                            <h6>
+                              <b> &amp;Orders</b>
+                            </h6>
+                          </div>
+                        </div>
+                      </Button>
                     </LinkContainer>
-                    <NavDropdown.Divider />
-                    <Link
-                      className="dropdown-item"
-                      to="#signout"
-                      onClick={signoutHandler}
-                    >
-                      Sign Out
-                    </Link>
-                  </NavDropdown>
-                ) : (
-                  <Link className="nav-link" to="/login">
-                    <Button variant="returns-and-orders">
-                      Hello, Sign in <br></br>
-                      <h6>
-                        <b>Account &amp; Lists</b>
-                      </h6>
-                    </Button>
-                  </Link>
-                )}
-                <Nav className="me-auto">
-                  <Link to="/cart" className="nav-link">
-                    <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                    {cart.cartItems.length > 0 && (
-                      <Badge pill bg="warning">
-                        {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
-                      </Badge>
+
+                    {userInfo ? (
+                      <NavDropdown
+                        title={userInfo.name}
+                        id="basic-nav-dropdown"
+                        className="user-info-dropdown"
+                      >
+                        <LinkContainer to="/profile">
+                          <NavDropdown.Item>User Profile</NavDropdown.Item>
+                        </LinkContainer>
+                        <NavDropdown.Divider />
+                        <Link
+                          className="dropdown-item"
+                          to="#signout"
+                          onClick={signoutHandler}
+                        >
+                          Sign Out
+                        </Link>
+                      </NavDropdown>
+                    ) : (
+                      <Link className="nav-link" to="/login">
+                        <Button variant="hello-sign-in">
+                          <div className="one-line-when-collapse-parent">
+                            <div className="one-line-when-collapse-child">
+                              Hello, Sign in &nbsp; <br />
+                            </div>
+                            <div className="one-line-when-collapse-child">
+                              <h6>
+                                <b>Account &amp; Lists</b>
+                              </h6>
+                            </div>
+                          </div>
+                        </Button>
+                      </Link>
                     )}
-                  </Link>
-                </Nav>
+
+                    <Link to="/cart" className="nav-link">
+                      <div className="cart-logo-container">
+                        <div className="one-line-child">
+                          {" "}
+                          <h6>Cart &nbsp;</h6>
+                        </div>
+                        <div className="one-line-child">
+                          {" "}
+                          <i
+                            className="fa fa-shopping-cart"
+                            aria-hidden="true"
+                          ></i>
+                          {cart.cartItems.length > 0 && (
+                            <Badge pill bg="warning">
+                              {cart.cartItems.reduce(
+                                (a, c) => a + c.quantity,
+                                0
+                              )}
+                            </Badge>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  </Nav>
+                </Navbar.Collapse>
               </Container>
             </Navbar>
           </header>
+
           <main>
             <div className="center-contents">
-              {" "}
               <div className="disclaimer">
                 <div className="center-contents">
-                  {" "}
                   <span>
-                    {" "}
                     <Link to="/about" className="not-real-site-txt">
                       This is not a real website, read more in our{" "}
                       <span className="amzn-link">about page</span>
@@ -127,6 +161,7 @@ function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/checkout" element={<OrderPage />} />
                 <Route path="/order/:id" element={<OrderDetailsPage />} />
+                <Route path="/myorders" element={<OrderHistoryPage />} />
               </Routes>
             </Container>
           </main>
