@@ -39,14 +39,14 @@ const data = {
       countInStock: 10,
       brand: "van Heusen",
       rating: 4.5,
-      numRatings: 12283,
+      numReviews: 12283,
       description: `-65% Polyester, 35% Cotton Button closure 
       \n- Machine Wash Wrinkle Free: Developed for less wrinkles and easy care
       \n- Regular Fit: A generous cut through the shoulders, chest and waist for total comfort and a classic fit. This fit is similar to a full cut fit.
       \n- Point Collar: Classic collar thought to lengthen the face & allows for tie knot variety; can be worn with or without neckwear.
       \n- Adjustable Cuff: Two button positions allow for a more customized, improved fit.
       \n- Chest Pocket: Classic design holds all your essentials. \n- For big fit, search style number 20F9562. For tall fit, search style number 20F9563.`,
-      isBestSeller:true
+      isBestSeller: true,
     },
     {
       name: "Placeholder0",
@@ -57,7 +57,7 @@ const data = {
       countInStock: 0,
       brand: "chinaGeneric",
       rating: 4.0,
-      numRatings: 12,
+      numReviews: 12,
       description: "placeholder",
     },
     {
@@ -69,7 +69,7 @@ const data = {
       countInStock: 15,
       brand: "chinaGeneric",
       rating: 4.5,
-      numRatings: 14,
+      numReviews: 14,
       description: "placeholder",
     },
     {
@@ -81,7 +81,7 @@ const data = {
       countInStock: 5,
       brand: "chinaGeneric",
       rating: 4.5,
-      numRatings: 7,
+      numReviews: 7,
       description: "placeholder",
     },
   ],

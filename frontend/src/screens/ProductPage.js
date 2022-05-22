@@ -103,7 +103,7 @@ export default function ProductPage() {
                   <p className="one-line">
                     <Rating
                       rating={product.rating}
-                      numRatings={product.numRatings}
+                      numReviews={product.numReviews}
                     ></Rating>
                   </p>
                 </span>

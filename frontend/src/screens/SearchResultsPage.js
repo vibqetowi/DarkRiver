@@ -12,6 +12,7 @@ import MessageBox from '../components/MessageBox';
 import Button from 'react-bootstrap/Button';
 import Product from '../components/Product';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
+import { Container } from 'react-bootstrap';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -132,153 +133,178 @@ export default function SearchResultsPage() {
       <Helmet>
         <title>Search Products</title>
       </Helmet>
-      <Row>
-        <Col md={3}>
-          <h3>Department</h3>
-          <div>
-            <ul>
-              <li>
-                <Link
-                  className={'all' === category ? 'text-bold' : ''}
-                  to={getFilterUrl({ category: 'all' })}
-                >
-                  Any
-                </Link>
-              </li>
-              {categories.map((c) => (
-                <li key={c}>
+      <Container fluid className="rounded-border-black-bg">
+        {" "}
+        <Row>
+          <Col md={3}>
+            <h4>Department</h4>
+            <div>
+              <ul>
+                <li>
                   <Link
-                    className={c === category ? 'text-bold' : ''}
-                    to={getFilterUrl({ category: c })}
+                    id="white-link"
+                    className={"all" === category ? "text-bold" : ""}
+                    to={getFilterUrl({ category: "all" })}
                   >
-                    {c}
+                    All
                   </Link>
                 </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3>Price</h3>
-            <ul>
-              <li>
-                <Link
-                  className={'all' === price ? 'text-bold' : ''}
-                  to={getFilterUrl({ price: 'all' })}
-                >
-                  Any
-                </Link>
-              </li>
-              {prices.map((p) => (
-                <li key={p.value}>
-                  <Link
-                    to={getFilterUrl({ price: p.value })}
-                    className={p.value === price ? 'text-bold' : ''}
-                  >
-                    {p.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3>Avg. Customer Review</h3>
-            <ul>
-              {ratings.map((r) => (
-                <li key={r.name}>
-                  <Link
-                    to={getFilterUrl({ rating: r.rating })}
-                    className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
-                  >
-                    <Rating caption={' & up'} rating={r.rating}></Rating>
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link
-                  to={getFilterUrl({ rating: 'all' })}
-                  className={rating === 'all' ? 'text-bold' : ''}
-                >
-                  <Rating caption={' & up'} rating={0}></Rating>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </Col>
-        <Col md={9}>
-          {loading ? (
-            <LoadingBox></LoadingBox>
-          ) : error ? (
-            <MessageBox variant="danger">{error}</MessageBox>
-          ) : (
-            <>
-              <Row className="justify-content-between mb-3">
-                <Col md={6}>
-                  <div>
-                    {countProducts === 0 ? 'No' : countProducts} Results
-                    {query !== 'all' && ' : ' + query}
-                    {category !== 'all' && ' : ' + category}
-                    {price !== 'all' && ' : Price ' + price}
-                    {rating !== 'all' && ' : Rating ' + rating + ' & up'}
-                    {query !== 'all' ||
-                    category !== 'all' ||
-                    rating !== 'all' ||
-                    price !== 'all' ? (
-                      <Button
-                        variant="light"
-                        onClick={() => navigate('/search')}
-                      >
-                        <i className="fas fa-times-circle"></i>
-                      </Button>
-                    ) : null}
-                  </div>
-                </Col>
-                <Col className="text-end">
-                  Sort by{' '}
-                  <select
-                    value={order}
-                    onChange={(e) => {
-                      navigate(getFilterUrl({ order: e.target.value }));
-                    }}
-                  >
-                    <option value="newest">Newest Arrivals</option>
-                    <option value="lowest">Price: Low to High</option>
-                    <option value="highest">Price: High to Low</option>
-                    <option value="toprated">Avg. Customer Reviews</option>
-                  </select>
-                </Col>
-              </Row>
-              {products.length === 0 && (
-                <MessageBox>No Product Found</MessageBox>
-              )}
-
-              <Row>
-                {products.map((product) => (
-                  <Col sm={6} lg={4} className="mb-3" key={product._id}>
-                    <Product product={product}></Product>
-                  </Col>
-                ))}
-              </Row>
-
-              <div>
-                {[...Array(pages).keys()].map((x) => (
-                  <LinkContainer
-                    key={x + 1}
-                    className="mx-1"
-                    to={getFilterUrl({ page: x + 1 })}
-                  >
-                    <Button
-                      className={Number(page) === x + 1 ? 'text-bold' : ''}
-                      variant="light"
+                {categories.map((c) => (
+                  <li key={c}>
+                    <Link
+                      id="white-link"
+                      className={c === category ? "text-bold" : ""}
+                      to={getFilterUrl({ category: c })}
                     >
-                      {x + 1}
-                    </Button>
-                  </LinkContainer>
+                      {c}
+                    </Link>
+                  </li>
                 ))}
-              </div>
-            </>
-          )}
-        </Col>
-      </Row>
+              </ul>
+            </div>
+            <div>
+              <h4>Price</h4>
+              <ul>
+                <li>
+                  <Link
+                    id="white-link"
+                    className={"all" === price ? "text-bold" : ""}
+                    to={getFilterUrl({ price: "all" })}
+                  >
+                    Any
+                  </Link>
+                </li>
+                {prices.map((p) => (
+                  <li key={p.value}>
+                    <Link
+                      id="white-link"
+                      to={getFilterUrl({ price: p.value })}
+                      className={p.value === price ? "text-bold" : ""}
+                    >
+                      {p.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4>Customer Review</h4>
+              <ul>
+                {ratings.map((r) => (
+                  <li key={r.name}>
+                    <Link
+                      to={getFilterUrl({ rating: r.rating })}
+                      className={
+                        `${r.rating}` === `${rating}` ? "text-bold" : ""
+                      }
+                    >
+                      <div className="one-line-parent">
+                        <div className="one-line-child">
+                          <Rating caption={" & up"} rating={r.rating}></Rating>
+                        </div>
+                        <div className="one-line-child">
+                          <p> &amp;up</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link
+                    id="white-link"
+                    to={getFilterUrl({ rating: "all" })}
+                    className={rating === "all" ? "text-bold" : ""}
+                  >
+                    <div className="one-line-parent">
+                      <div className="one-line-child">
+                        <Rating caption={" & up"} rating={0}></Rating>
+                      </div>
+                      <div className="one-line-child">
+                        <p> &amp;up</p>
+                      </div>
+                    </div>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </Col>
+          <Col md={9}>
+            {loading ? (
+              <LoadingBox></LoadingBox>
+            ) : error ? (
+              <MessageBox variant="danger">{error}</MessageBox>
+            ) : (
+              <>
+                <Row className="justify-content-between mb-3">
+                  <Col md={6}>
+                    <div>
+                      {countProducts === 0 ? "No" : countProducts} Results
+                      {query !== "all" && " : " + query}
+                      {category !== "all" && " : " + category}
+                      {price !== "all" && " : Price " + price}
+                      {rating !== "all" && " : Rating " + rating + " & up"}
+                      {query !== "all" ||
+                      category !== "all" ||
+                      rating !== "all" ||
+                      price !== "all" ? (
+                        <Button
+                          id="clear-filters"
+                          variant="light"
+                          onClick={() => navigate("/search")}
+                        >
+                          <i className="fas fa-times-circle"></i> Clear
+                        </Button>
+                      ) : null}
+                    </div>
+                  </Col>
+                  <Col className="text-end">
+                    Sort by{" "}
+                    <select
+                      value={order}
+                      onChange={(e) => {
+                        navigate(getFilterUrl({ order: e.target.value }));
+                      }}
+                    >
+                      <option value="newest">Newest Arrivals</option>
+                      <option value="lowest">Price: Low to High</option>
+                      <option value="highest">Price: High to Low</option>
+                      <option value="toprated">Avg. Customer Reviews</option>
+                    </select>
+                  </Col>
+                </Row>
+                {products.length === 0 && (
+                  <MessageBox>No Product Found</MessageBox>
+                )}
+
+                <Row>
+                  {products.map((product) => (
+                    <Col sm={6} lg={4} className="mb-3" key={product._id}>
+                      <Product product={product}></Product>
+                    </Col>
+                  ))}
+                </Row>
+
+                <div>
+                  {[...Array(pages).keys()].map((x) => (
+                    <LinkContainer
+                      key={x + 1}
+                      className="mx-1"
+                      to={getFilterUrl({ page: x + 1 })}
+                    >
+                      <Button
+                        className={Number(page) === x + 1 ? "text-bold" : ""}
+                        variant="light"
+                      >
+                        {x + 1}
+                      </Button>
+                    </LinkContainer>
+                  ))}
+                </div>
+              </>
+            )}
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

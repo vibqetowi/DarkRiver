@@ -1,5 +1,5 @@
 function Rating(props) {
-  const { rating, numRatings } = props;
+  const { rating, numReviews } = props;
   return (
     <div className="one-line-parent">
       <div className="rating">
@@ -63,7 +63,7 @@ function Rating(props) {
 
         <div className="one-line-child">
           <span>
-            <p>&nbsp;{numRatings}</p>
+            <p>&nbsp;{numReviews}</p>
           </span>
         </div>
       </div>
