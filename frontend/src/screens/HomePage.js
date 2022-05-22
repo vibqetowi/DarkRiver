@@ -36,8 +36,7 @@ export default function HomePage() {
       error: "",
     }
   );
-
-  const [{ loading1, error1, aisles }, dispatch1] = useReducer(
+  /*   const [{ loading1, error1, aisles }, dispatch1] = useReducer(
     logger(reducer),
     {
       aisles: [],
@@ -45,6 +44,7 @@ export default function HomePage() {
       error: "",
     }
   );
+*/
 
   //const [products, setProducts]=useState([]);
   useEffect(() => {
@@ -58,8 +58,7 @@ export default function HomePage() {
       }
     };
     fetchProd();
-
-    const fetchAisle = async () => {
+    /**     const fetchAisle = async () => {
       dispatch1({ type: "FETCH_REQUEST" });
       try {
         const result = await axios.get("/api/aisles");
@@ -68,9 +67,8 @@ export default function HomePage() {
         dispatch1({ type: "FETCH_FAIL", payload: err.message });
       }
     };
-    fetchAisle();
+    fetchAisle();*/
   }, []);
-
 
   return (
     <>
@@ -99,7 +97,7 @@ export default function HomePage() {
         <h1>Categories</h1>
 
         <div className="aisles">
-          {loading1 ? (
+          {/* {loading1 ? (
             <LoadingBox />
           ) : error1 ? (
             <MessageBox variant="danger">could not load aisle</MessageBox>
@@ -111,7 +109,7 @@ export default function HomePage() {
                 </Col>
               ))}
             </Row>
-          )}
+          )} */}
         </div>
       </Container>
     </>
