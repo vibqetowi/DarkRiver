@@ -46,6 +46,7 @@ const data = {
       \n- Point Collar: Classic collar thought to lengthen the face & allows for tie knot variety; can be worn with or without neckwear.
       \n- Adjustable Cuff: Two button positions allow for a more customized, improved fit.
       \n- Chest Pocket: Classic design holds all your essentials. \n- For big fit, search style number 20F9562. For tall fit, search style number 20F9563.`,
+      isBestSeller:true
     },
     {
       name: "Placeholder0",

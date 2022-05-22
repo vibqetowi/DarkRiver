@@ -23,6 +23,13 @@ import OrderPage from "./screens/Checkout";
 import OrderDetailsPage from "./screens/OrderDetailsPage";
 import OrderHistoryPage from "./screens/OrderHistoryPage";
 import UserProfilePage from "./screens/UserProfilePage";
+import { useEffect } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { getError } from "./utils";
+import { useState } from "react";
+import SearchBox from "./components/SearchBox";
+import SearchResultsPage from "./screens/SearchResultsPage";
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -33,8 +40,22 @@ function App() {
     localStorage.removeItem("userInfo");
     localStorage.removeItem("shippingAddress");
     localStorage.removeItem("paymentMethod");
-        window.location.href = "/login";
+    window.location.href = "/login";
   };
+
+  const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const { data } = await axios.get(`/api/products/categories`);
+        setCategories(data);
+      } catch (err) {
+        toast.error(getError(err));
+      }
+    };
+    fetchCategories();
+  }, []);
 
   return (
     <>
@@ -54,72 +75,75 @@ function App() {
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="me-auto  w-100  justify-content-end">
+                  <SearchBox />
+                  <Nav className="me-auto justify-content-end">
                     {userInfo ? (
-                      <> <LinkContainer to="/order/history">
-                        <Button variant="returns-and-orders">
-                          <div className="one-line-when-collapse-parent">
-                            <div className="one-line-when-collapse-child">
-                              Returns&nbsp; <br />
+                      <>
+                        {" "}
+                        <LinkContainer to="/order/history">
+                          <Button variant="returns-and-orders">
+                            <div className="one-line-when-collapse-parent">
+                              <div className="one-line-when-collapse-child">
+                                Returns&nbsp; <br />
+                              </div>
+                              <div className="one-line-when-collapse-child">
+                                <h6>
+                                  <b> &amp;Orders</b>
+                                </h6>
+                              </div>
                             </div>
-                            <div className="one-line-when-collapse-child">
-                              <h6>
-                                <b> &amp;Orders</b>
-                              </h6>
-                            </div>
-                          </div>
-                        </Button>
-                      </LinkContainer>
-
-                        <NavDropdown
-                        title={userInfo.name}
-                        id="basic-nav-dropdown"
-                        className="user-info-dropdown"
-                      >
-                        <LinkContainer to="/profile">
-                          <NavDropdown.Item>User Profile</NavDropdown.Item>
+                          </Button>
                         </LinkContainer>
-                        <NavDropdown.Divider />
-                        <Link
-                          className="dropdown-item"
-                          to="#signout"
-                          onClick={signoutHandler}
+                        <NavDropdown
+                          title={userInfo.name}
+                          id="basic-nav-dropdown"
+                          className="user-info-dropdown"
                         >
-                          Sign Out
-                        </Link>
-                      </NavDropdown></>
-                     
-                    ) : (
-                      <> <LinkContainer to="/login">
-                        <Button variant="returns-and-orders">
-                          <div className="one-line-when-collapse-parent">
-                            <div className="one-line-when-collapse-child">
-                              Returns&nbsp; <br />
-                            </div>
-                            <div className="one-line-when-collapse-child">
-                              <h6>
-                                <b> &amp;Orders</b>
-                              </h6>
-                            </div>
-                          </div>
-                        </Button>
-                      </LinkContainer>
-                           <Link className="nav-link" to="/login">
-                        <Button variant="hello-sign-in">
-                          <div className="one-line-when-collapse-parent">
-                            <div className="one-line-when-collapse-child">
-                              Hello, Sign in &nbsp; <br />
-                            </div>
-                            <div className="one-line-when-collapse-child">
-                              <h6>
-                                <b>Account &amp; Lists</b>
-                              </h6>
-                            </div>
-                          </div>
-                        </Button>
-                      </Link>
+                          <LinkContainer to="/profile">
+                            <NavDropdown.Item>User Profile</NavDropdown.Item>
+                          </LinkContainer>
+                          <NavDropdown.Divider />
+                          <Link
+                            className="dropdown-item"
+                            to="#signout"
+                            onClick={signoutHandler}
+                          >
+                            Sign Out
+                          </Link>
+                        </NavDropdown>
                       </>
-                     
+                    ) : (
+                      <>
+                        {" "}
+                        <LinkContainer to="/login">
+                          <Button variant="returns-and-orders">
+                            <div className="one-line-when-collapse-parent">
+                              <div className="one-line-when-collapse-child">
+                                Returns&nbsp; <br />
+                              </div>
+                              <div className="one-line-when-collapse-child">
+                                <h6>
+                                  <b> &amp;Orders</b>
+                                </h6>
+                              </div>
+                            </div>
+                          </Button>
+                        </LinkContainer>
+                        <Link className="nav-link" to="/login">
+                          <Button variant="hello-sign-in">
+                            <div className="one-line-when-collapse-parent">
+                              <div className="one-line-when-collapse-child">
+                                Hello, Sign in &nbsp; <br />
+                              </div>
+                              <div className="one-line-when-collapse-child">
+                                <h6>
+                                  <b>Account &amp; Lists</b>
+                                </h6>
+                              </div>
+                            </div>
+                          </Button>
+                        </Link>
+                      </>
                     )}
 
                     <Link to="/cart" className="nav-link">
@@ -148,9 +172,60 @@ function App() {
                   </Nav>
                 </Navbar.Collapse>
               </Container>
-            </Navbar>
+              <Button
+                variant="sidebar-toggle"
+                onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
+              >
+                <i className="fas fa-bars"></i> All
+              </Button>
+              <Link to="/" className="navbar-prime-link">
+                Prime
+              </Link>
+              <Link to="/" className="navbar-best-sellers-link">
+                Best Sellers
+              </Link>
+            </Navbar>{" "}
+            {/*
+              <Container>
+                
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+          
+                </Navbar.Collapse>
+              </Container>
+            </Navbar> */}
           </header>
+          <div
+            className={
+              sidebarIsOpen
+                ? "active-nav side-navbar d-flex justify-content-between flex-wrap flex-column"
+                : "side-navbar d-flex justify-content-between flex-wrap flex-column"
+            }
+          >
+            <i
+              class="fa fa-close"
+              id="close-sidebar"
+              onClick={() => setSidebarIsOpen(false)}
+            ></i>
 
+            <Nav className="flex-column text-white w-100 p-2">
+              <Nav.Item>
+                <br></br>
+                <strong>Categories</strong>
+              </Nav.Item>
+              {categories.map((category) => (
+                <Nav.Item key={category}>
+                  <LinkContainer
+                    to={`/search?category=${category}`}
+                    onClick={() => setSidebarIsOpen(false)}
+                    className="normal-ass-white-txt"
+                  >
+                    <Nav.Link>{category}</Nav.Link>
+                  </LinkContainer>
+                </Nav.Item>
+              ))}
+            </Nav>
+          </div>
           <main>
             <div className="center-contents">
               <div className="disclaimer">
@@ -180,6 +255,7 @@ function App() {
                 <Route path="/order/:id" element={<OrderDetailsPage />} />
                 <Route path="/order/history" element={<OrderHistoryPage />} />
                 <Route path="/profile" element={<UserProfilePage />} />
+                <Route path="/search" element={<SearchResultsPage />} />
               </Routes>
             </Container>
           </main>

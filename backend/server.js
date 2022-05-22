@@ -11,20 +11,8 @@ import path from "path";
 dotenv.config();
 
 //need to disable vpn when connecting to atlas
- /*
 mongoose
   .connect(process.env.MONGODB_URI)
-  .then(() => {
-    console.log("connected to db");
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });
-  */
- 
-//local mongodb
-mongoose
-  .connect(process.env.MONGODB_URI_LOCAL)
   .then(() => {
     console.log("connected to db");
   })

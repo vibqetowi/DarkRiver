@@ -77,9 +77,11 @@ main {
 
 .logo {
   display: flex;
-  align-self: flex-start;
+  align-self: left;
   align-items: baseline;
-  padding: 0.5rem;
+padding-left: 0.5rem;
+padding-top: 0.5rem;
+margin-bottom: 1rem;
 }
 .logo i {
   font-size: 1.5rem;
@@ -93,12 +95,48 @@ main {
 }
 
 .topbar {
-  margin-bottom: 2rem;
-  padding-left: 1rem;
   width: screen;
   background-color: black;
-
   min-height: fit-content;
+}
+
+.navbar-prime-link{
+   color: white;
+font-size: 1rem;
+text-decoration: none;
+position: absolute;
+left: 5.5rem;
+bottom: 0.2rem;
+}
+.navbar-best-sellers-link:hover{
+  color: white;
+}
+.navbar-best-sellers-link{
+   color: white;
+font-size: 1rem;
+text-decoration: none;
+position: absolute;
+left: 9rem;
+bottom: 0.2rem;
+}
+.navbar-prime-link:hover{
+  color: white;
+}
+.btn-sidebar-toggle{
+  color: white;
+font-size: 1rem;
+position: absolute;
+left: 0;
+bottom:-0.2rem;
+margin-left: 1.5rem;
+}
+
+.btn-sidebar-toggle:hover{
+  color: white;
+}
+.full-width{
+width: 100%;
+flex:1;
 }
 
 .card-img-top {
@@ -300,6 +338,7 @@ h3 {
   size: auto;
 }
 
+
 .btn-returns-and-orders {
   background-color: black;
   color: white;
@@ -308,6 +347,10 @@ h3 {
   font-size: 1rem;
   margin-top: 0.5rem;
   max-height: 5rem;
+}
+
+#search-box{
+  width:100%;
 }
 
 .btn-hello-sign-in {
@@ -492,6 +535,7 @@ td {
 
 .me-auto {
   padding-left: 1rem;
+  margin-bottom: 1.5rem;
   background-color: black;
 }
 
@@ -505,6 +549,120 @@ td {
 .stack-contents-parent {
   display: grid;
 }
+
+/* stuff from my man basir ---------------------------------- */
+
+.site-container {
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
+.btn-primary,
+.btn-outline-primary {
+  background-color: #f0c040;
+  color: #000000;
+}
+
+.img-thumbnail {
+  height: 80px;
+}
+
+/* sidebar */
+.navbar-brand {
+  font-weight: bold;
+}
+.side-navbar {
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  left: -300px;
+  background-color: #100901;
+  transition: 0.5s;
+}
+
+#close-sidebar{
+  position: absolute;
+left: 260px;
+top: 1rem;
+font-size: 60px;
+color: #777777;
+}
+
+#close-sidebar:hover{
+  color: red
+}
+
+
+.site-container {
+  transition: 0.4s;
+}
+.active-cont {
+  margin-left: 240px;
+}
+.active-nav {
+  left: 0;
+  z-index: 999;
+}
+.text-bold {
+  font-weight: bold;
+}
+
+/* Map */
+
+.full-box {
+  height: 100vh;
+  max-width: initial;
+}
+.full-box header,
+.full-box footer {
+  display: none;
+}
+.full-box .container {
+  height: 100vh;
+  max-width: initial;
+  margin: 0;
+  padding: 0;
+}
+
+.full-box .mt-3 {
+  margin-top: 0 !important;
+}
+
+.map-input-box {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0.5rem auto;
+  width: 25rem;
+  height: 3rem;
+  display: flex;
+}
+.map-input-box input {
+  border-radius: 1rem 0 0 1rem;
+  border-right: 0;
+}
+.map-input-box button {
+  border-radius: 0 1rem 1rem 0;
+  border-left: 0;
+}
+button.thumbnail {
+  padding: 0;
+}
+
+#button-search{
+  border: none;
+  color: black;
+  background-color: #ffc000;
+}
+
+#button-search:hover{
+  border: none;
+  color: #ffc000;
+  background-color: black;
+}
+
 
 /* media queries -------------------------------------- */
 @media only screen and (max-width: 1000px) {
