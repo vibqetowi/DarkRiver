@@ -1,7 +1,7 @@
 # DarkRiver
 https://darkriver.herokuapp.com
 
-Simulated eccommerce website built on the React framework. The backend uses MongoDB and there's Paypal integration because I can. 
+Simulated eccommerce website built on MERN stack and there's Paypal integration because I can. 
 The design is loosely inspired by the idea of a dark-themed Amazon.
 
 Currently working: customer login, cart, checkout, paypal payment, searching for products
