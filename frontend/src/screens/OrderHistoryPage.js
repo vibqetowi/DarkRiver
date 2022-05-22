@@ -79,7 +79,7 @@ export default function OrderHistoryPage() {
             <tbody>
               {orders.map((order) => (
                 <tr key={order._id}>
-                  <td>{order._id}</td>
+                  <td>#{order._id}</td>
                   <td>{order.createdAt.substring(0, 10)}</td>
                   <td>{order.totalPrice.toFixed(2)}</td>
                   <td>{order.isPaid ? order.paidAt.substring(0, 10) : "No"}</td>
@@ -91,7 +91,7 @@ export default function OrderHistoryPage() {
                   <td>
                     <Button
                       type="button"
-                      variant="light"
+                      variant="amzn"
                       onClick={() => {
                         navigate(`/order/${order._id}`);
                       }}

@@ -10,6 +10,7 @@ import path from "path";
 
 dotenv.config();
 
+//needs to disable vpn when connecting to atlas
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
