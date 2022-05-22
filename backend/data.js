@@ -31,7 +31,7 @@ const data = {
     {
       name: "White Dress Shirt",
       slug: "B009ESZFFO",
-      aisle: "Shirts",
+      category: "Shirts",
       image: "/images/white-dress-shirt-main.jpeg",
       image0: "/images/white-dress-shirt-0.jpeg",
       image1: "/images/white-dress-shirt-1.jpeg",

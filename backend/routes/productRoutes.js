@@ -91,7 +91,7 @@ productRouter.post(
         comment: req.body.comment,
       };
       product.reviews.push(review);
-      product.numReviews = product.reviews.length;
+      product.numRatings = product.reviews.length;
       product.rating =
         product.reviews.reduce((a, c) => c.rating + a, 0) /
         product.reviews.length;
@@ -99,7 +99,7 @@ productRouter.post(
       res.status(201).send({
         message: "Review Created",
         review: updatedProduct.reviews[updatedProduct.reviews.length - 1],
-        numReviews: product.numReviews,
+        numRatings: product.numReviews,
         rating: product.rating,
       });
     } else {
