@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useEffect, useReducer } from "react";
+import { useContext,  } from "react";
 import {
   Button,
   Card,
@@ -11,11 +11,8 @@ import {
 } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
-import logger from "use-reducer-logger";
-import MessageBox from "../components/MessageBox";
-import Product from "../components/Product";
 import { Store } from "../Store";
-import { getError } from "../utils";
+
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -57,7 +54,7 @@ export default function CartPage() {
             <div className="col2">
               <div className="screen-500px-stack">
                 <div className="cart-page-left-left-div">
-                <img src="/images/shopNow.jpg" className="shop-now-img"></img>
+                <img src="/images/shopNow.jpg" className="shop-now-img" alt="shop now"></img>
               </div>
               <div className="cart-page-left-left-div">
                 <h3>Your DarkRiver Cart is empty </h3> <br></br>
