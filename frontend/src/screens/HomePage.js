@@ -1,9 +1,8 @@
-import { useEffect, useReducer} from "react";
+import { useEffect, useReducer } from "react";
 import axios from "axios";
 import logger from "use-reducer-logger";
 import { Col, Container, Row } from "react-bootstrap";
 import Product from "../components/Product";
-import Aisle from "../components/Aisle";
 import { Helmet } from "react-helmet-async";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
@@ -36,17 +35,7 @@ export default function HomePage() {
       error: "",
     }
   );
-  /*   const [{ loading1, error1, aisles }, dispatch1] = useReducer(
-    logger(reducer),
-    {
-      aisles: [],
-      loading: true,
-      error: "",
-    }
-  );
-*/
 
-  //const [products, setProducts]=useState([]);
   useEffect(() => {
     const fetchProd = async () => {
       dispatch0({ type: "FETCH_REQUEST" });
@@ -58,16 +47,6 @@ export default function HomePage() {
       }
     };
     fetchProd();
-    /**     const fetchAisle = async () => {
-      dispatch1({ type: "FETCH_REQUEST" });
-      try {
-        const result = await axios.get("/api/aisles");
-        dispatch1({ type: "FETCH_SUCCESS", payload: result.data });
-      } catch (err) {
-        dispatch1({ type: "FETCH_FAIL", payload: err.message });
-      }
-    };
-    fetchAisle();*/
   }, []);
 
   return (
@@ -95,24 +74,7 @@ export default function HomePage() {
         <br></br>
         <br></br>
         <h1>Categories</h1>
-
-        <div className="aisles">
-          {/* {loading1 ? (
-            <LoadingBox />
-          ) : error1 ? (
-            <MessageBox variant="danger">could not load aisle</MessageBox>
-          ) : (
-            <Row>
-              {aisles.map((aisle) => (
-                <Col key={aisle.slug} sm={5} md={5} lg={4} className="mb-3">
-                  <Aisle aisle={aisle}></Aisle>
-                </Col>
-              ))}
-            </Row>
-          )} */}
-        </div>
       </Container>
     </>
   );
 }
-

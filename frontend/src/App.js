@@ -7,7 +7,6 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import AislePage from "./screens/AislePage";
 import HomePage from "./screens/HomePage";
 import ProductPage from "./screens/ProductPage";
 import CartPage from "./screens/CartPage";
@@ -172,7 +171,6 @@ function App() {
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/dp/:slug" element={<ProductPage />} />
                 <Route path="/seller/:brand" element={<SellerPage />} />
-                <Route path="/aisle/:slug" element={<AislePage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/shipping" element={<ShippingPage />} />
                 <Route path="/signup" element={<SignupPage />} />

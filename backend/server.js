@@ -57,9 +57,6 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 //-----------------------------------------------
-app.get("/api/aisles", (req, res) => {
-  res.send(data.aisles);
-});
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
