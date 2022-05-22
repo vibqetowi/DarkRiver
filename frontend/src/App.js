@@ -56,11 +56,16 @@ function App() {
     };
     fetchCategories();
   }, []);
+      
 
   return (
     <>
       <BrowserRouter>
-        <div className="d-flex flex-column site-container">
+        <div
+          className="d-flex flex-column site-container"
+          onClick={sidebarIsOpen ? () => setSidebarIsOpen(false) : null}
+          id={sidebarIsOpen ? "greyed-out" : null}
+        >
           <header>
             <Navbar bg="black" variant="dark" expand="md" className="topbar">
               <Container>
@@ -185,17 +190,9 @@ function App() {
                 Best Sellers
               </Link>
             </Navbar>{" "}
-            {/*
-              <Container>
-                
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-          
-                </Navbar.Collapse>
-              </Container>
-            </Navbar> */}
           </header>
           <div
+            id="hideMe"
             className={
               sidebarIsOpen
                 ? "active-nav side-navbar d-flex justify-content-between flex-wrap flex-column"

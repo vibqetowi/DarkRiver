@@ -586,11 +586,18 @@ main {
 left: 260px;
 top: 1rem;
 font-size: 60px;
-color: #777777;
+color: black;
 }
 
+#greyed-out{
+  filter:grayscale();
+}
 #close-sidebar:hover{
-  color: red
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  left: 245px;
+  top:0;
 }
 
 
@@ -603,6 +610,7 @@ color: #777777;
 .active-nav {
   left: 0;
   z-index: 999;
+    filter:brightness(300%);
 }
 .text-bold {
   font-weight: bold;
