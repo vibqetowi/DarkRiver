@@ -31,7 +31,7 @@ function Product(props) {
       <Card.Body>
         <Link className="prodName" to={`/dr/${product.slug}`}>
           <Card.Title style={{ fontSize: "1em" }}>
-            <p className={product.isBestseller ? "turquoise" : null}>
+            <p className={product.isBestSeller ? "turquoise" : null}>
               {product.name}
             </p>
           </Card.Title>

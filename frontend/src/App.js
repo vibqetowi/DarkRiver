@@ -76,7 +76,7 @@ function App() {
         >
           <header>
             <Navbar bg="black" variant="dark" expand="md" className="topbar">
-              <Container>
+              <Container fluid>
                 <LinkContainer to="/">
                   <Navbar.Brand>
                     <span className="logo">
