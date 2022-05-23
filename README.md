@@ -1,11 +1,11 @@
 # DarkRiver
 https://darkriver.herokuapp.com
 
-Simulated eccommerce website built on MERN stack and there's Paypal integration because I can. 
+Simulated ecommerce website built on MERN stack and there's Paypal integration because I can. 
 The design is loosely inspired by the idea of a dark-themed Amazon.
 
-Currently working: customer login, cart, checkout, paypal payment, searching for products
+Currently working: customer login, cart, checkout, paypal payment, searching for products.
 
-Not implemented: footer, admin menu, seller menu, website was designed mobile first so some css still has to be ironed-out
+Not implemented: footer, admin menu, seller menu, some css, some links just lead to amazon and may have pages implemented later and a few things I sprinkled as comments throughout the site.
 
-This project is for fun, not for commercial applications and all copyrighted materials were used without permission. This is not a real website and I'm just some random student
+This is not a real website and needless to say, do not enter any real information on the site.

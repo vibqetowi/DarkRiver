@@ -165,6 +165,10 @@ p {
   white-space: pre-line
 }
 
+p:hover{
+  color: #e89e4a;
+}
+
 .reviews-div{
   max-width: 800px;
 }
@@ -588,10 +592,33 @@ main {
   width: 8rem;
 }
 
+.cart-img {
+  height: 11rem;
+  width: 11rem;
+}
 /* sidebar */
 .navbar-brand {
   font-weight: bold;
 }
+
+.turquoise{
+  color: turquoise;
+  text-decoration: none;
+}
+
+#turquoise{
+  color: turquoise;
+  text-decoration: none;
+}
+
+#turquoise:hover{
+  color: #e89e4a;
+}
+
+.turquoise:hover{
+  color: #e89e4a;
+}
+
 .side-navbar {
   min-width: 250px;
   width: 40%;

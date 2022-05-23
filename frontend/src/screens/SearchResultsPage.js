@@ -142,7 +142,7 @@ export default function SearchResultsPage() {
               <ul>
                 <li>
                   <Link
-                    id="white-link"
+                    id="turquoise"
                     className={"all" === category ? "text-bold" : ""}
                     to={getFilterUrl({ category: "all" })}
                   >
@@ -152,7 +152,7 @@ export default function SearchResultsPage() {
                 {categories.map((c) => (
                   <li key={c}>
                     <Link
-                      id="white-link"
+                      id="turquoise"
                       className={c === category ? "text-bold" : ""}
                       to={getFilterUrl({ category: c })}
                     >
@@ -167,7 +167,7 @@ export default function SearchResultsPage() {
               <ul>
                 <li>
                   <Link
-                    id="white-link"
+                    id="turquoise"
                     className={"all" === price ? "text-bold" : ""}
                     to={getFilterUrl({ price: "all" })}
                   >
@@ -177,7 +177,7 @@ export default function SearchResultsPage() {
                 {prices.map((p) => (
                   <li key={p.value}>
                     <Link
-                      id="white-link"
+                      id="turquoise"
                       to={getFilterUrl({ price: p.value })}
                       className={p.value === price ? "text-bold" : ""}
                     >
@@ -203,7 +203,7 @@ export default function SearchResultsPage() {
                           <Rating caption={" & up"} rating={r.rating}></Rating>
                         </div>
                         <div className="one-line-child">
-                          <p> &amp;up</p>
+                          <p className="turquoise"> and up</p>
                         </div>
                       </div>
                     </Link>
@@ -211,7 +211,7 @@ export default function SearchResultsPage() {
                 ))}
                 <li>
                   <Link
-                    id="white-link"
+                    id="turquoise"
                     to={getFilterUrl({ rating: "all" })}
                     className={rating === "all" ? "text-bold" : ""}
                   >
@@ -220,7 +220,7 @@ export default function SearchResultsPage() {
                         <Rating caption={" & up"} rating={0}></Rating>
                       </div>
                       <div className="one-line-child">
-                        <p> &amp;up</p>
+                        <p className="turquoise"> and up</p>
                       </div>
                     </div>
                   </Link>

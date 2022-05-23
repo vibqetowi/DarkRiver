@@ -30,8 +30,22 @@ function Product(props) {
       </Link>
       <Card.Body>
         <Link className="prodName" to={`/dp/${product.slug}`}>
-          <Card.Title style={{ fontSize: "1em" }}>{product.name}</Card.Title>
-          <Rating rating={product.rating} numReviews={product.numReviews} />
+          <Card.Title style={{ fontSize: "1em" }}>
+            <p className={product.isBestseller? "turquoise" : null}>
+              {product.name}
+            </p>
+          </Card.Title>
+
+          <div className="one-line-parent">
+            <div className="one-line-child">
+              {" "}
+              <Rating rating={product.rating} />
+            </div>
+            <div className="one-line-child">
+              <p className="turquoise">&nbsp;{product.numReviews}</p>
+            </div>
+          </div>
+
           <Card.Text style={{ color: "white" }}>${product.price}</Card.Text>
         </Link>
         <br></br>

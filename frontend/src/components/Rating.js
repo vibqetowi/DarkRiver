@@ -62,8 +62,8 @@ function Rating(props) {
         </div>
 
         <div className="one-line-child">
-          <span>
-            <p>&nbsp;{numReviews}</p>
+          <span className="turquoise">
+         &nbsp;{numReviews}
           </span>
         </div>
       </div>

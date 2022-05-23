@@ -19,7 +19,7 @@ import ShippingPage from "./screens/ShippingPage";
 import SignupPage from "./screens/SignupPage";
 import PaymentMethodPage from "./screens/PaymentMethodPage";
 import AboutPage from "./screens/AboutPage";
-import OrderPage from "./screens/Checkout";
+import OrderPage from "./screens/CheckoutPage";
 import OrderDetailsPage from "./screens/OrderDetailsPage";
 import OrderHistoryPage from "./screens/OrderHistoryPage";
 import UserProfilePage from "./screens/UserProfilePage";

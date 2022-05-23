@@ -135,7 +135,7 @@ export default function Checkout() {
                             <img
                               src={item.image}
                               alt={item.name}
-                              className="img-fluid rounded img-thumbnail"
+                              className="thumbnail"
                             ></img>{" "}
                             {item.name}
                           </Link>

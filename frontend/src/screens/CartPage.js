@@ -69,7 +69,7 @@ export default function CartPage() {
                           <img
                             src={item.image}
                             alt={item.name}
-                            className="img-fluid rounded img-thumbnail"
+                            className="cart-img"
                           ></img>
                         </Link>
                       </Col>
@@ -80,14 +80,22 @@ export default function CartPage() {
                         ></Link>
                         <div className="one-line-parent">
                           <p className="cart-page-txt"> {item.name}</p>
-                          <p>
-                            <Link
-                              className="normal-ass-white-txt"
-                              to={`/seller/${item.brand}`}
-                            >
-                              sold by <p className="amzn-link">{item.brand}</p>
-                            </Link>
-                          </p>
+                          <div className="one-line-parent">
+                            <div className="one-line-child">Sold by &nbsp;</div>
+                            <div className="one-line-child">
+                              {" "}
+                              <Link
+                                className="turquoise"
+                                to={`/seller/${item.brand}`}
+                              >
+                                {item.brand}
+                              </Link>{" "}
+                            </div>
+                            <div className="one-line-child">
+                              &nbsp;and fulfilled by DarkRiver
+                            </div>
+                          </div>
+
                           <p className="cart-page-txt"> ${item.price}</p>
                           <div className="one-line-child">
                             <Button
@@ -116,8 +124,9 @@ export default function CartPage() {
                             <Button
                               onClick={() => removeItemHandler(item)}
                               variant="black-bg-white-txt"
+                              className="turquoise"
                             >
-                              Delete
+                           Delete
                             </Button>
                           </div>
                         </div>

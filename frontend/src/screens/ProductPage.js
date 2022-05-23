@@ -17,6 +17,7 @@ import { Store } from "../Store";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { toast } from "react-toastify";
 import { Container } from "react-bootstrap";
+import { ListGroupItem } from "react-bootstrap";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -140,12 +141,21 @@ export default function ProductPage() {
                 <title>{product.name}</title>
               </Helmet>
               <h1>{product.name}</h1>
+              <Link className="turquoise" to={`/seller/${product.brand}`}>
+                <h6>Visit the {product.brand} store</h6>
+              </Link>
             </ListGroup.Item>
             <ListGroup.Item className="black-bg">
-              <Rating
-                rating={product.rating}
-                numReviews={product.numReviews}
-              ></Rating>
+              <div className="one-line-parent">
+                <div className="one-line-child">
+                  <Rating rating={product.rating}></Rating>{" "}
+                </div>
+                <div className="one-line-child">
+                  <p className="turquoise">
+                    &nbsp;{product.numReviews} ratings
+                  </p>
+                </div>
+              </div>
             </ListGroup.Item>
             <ListGroup.Item className="black-bg">
               Price : ${product.price}
@@ -165,6 +175,29 @@ export default function ProductPage() {
               <ListGroup variant="flush">
                 <ListGroup.Item className="black-bg">
                   <Row>
+                    {" "}
+                    <div className="one-line-parent">
+                      <div className="one-line-child">
+                        {" "}
+                        <a
+                          href="https://www.amazon.ca/gp/help/customer/display.html?nodeId=GGE5X8EV7VNVTK6R"
+                          className="turquoise"
+                        >
+                          FREE delivery&nbsp;
+                        </a>
+                      </div>
+                      {product.price > 35 ? null : (
+                        <>
+                          {" "}
+                          <div className="one-line-child"> on</div>
+                          <br></br> orders above 35$
+                        </>
+                      )}
+                    </div>
+                  </Row>
+                  <br></br>
+                  <Row>
+                    {" "}
                     <Col>Price:</Col>
                     <Col>${product.price}</Col>
                   </Row>
@@ -190,6 +223,48 @@ export default function ProductPage() {
                     </div>
                   </ListGroup.Item>
                 )}
+
+                <ListGroupItem className="black-bg">
+                  <div className="one-line-parent">
+                    <div className="one-line-child">
+                      <i className="fa fa-lock"></i>
+                    </div>
+                    <div className="one-line-child">
+                      <a
+                        href="https://www.amazon.com/gp/help/customer/display.html?nodeId=201909010"
+                        className="turquoise"
+                      >
+                        &nbsp; Secure transaction
+                      </a>
+                    </div>
+                  </div>
+                </ListGroupItem>
+                <ListGroupItem className="black-bg">
+                  <div className="one-line-parent">
+                    <div className="one-line-child">Sold by &nbsp;</div>
+                    <div className="one-line-child">
+                      {" "}
+                      <Link
+                        className="turquoise"
+                        to={`/seller/${product.brand}`}
+                      >
+                        <h6>{product.brand}</h6>
+                      </Link>{" "}
+                    </div>
+                  </div>
+                  <div className="one-line-parent">
+                    <div className="one-line-child">and fulfilled by &nbsp;</div>
+                    <div className="one-line-child">
+                      {" "}
+                      <Link
+                        className="turquoise"
+                        to="/"
+                      >
+                        <h6>DarkRiver</h6>
+                      </Link>{" "}
+                    </div>
+                  </div>
+                </ListGroupItem>
               </ListGroup>
             </Card.Body>
           </Card>
