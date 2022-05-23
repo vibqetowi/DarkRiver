@@ -79,6 +79,8 @@ export default function LoginPage() {
         </p>
 
         <div className="mb-3">
+          <a href="https://alzheimer.ca/sites/default/files/documents/alzheimers-disease_getting-a-diagnosis_0.pdf" className="amzn-link">Forgot your password?</a>
+          <br></br>
           New customer?{" "}
           <Link to={`/signup?redirect=${redirect}`} className="amzn-link ">
             Create your account

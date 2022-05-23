@@ -225,6 +225,12 @@ function App() {
               >
                 Best Sellers
               </Link>
+              <a
+                href="mailto:admin.darkriver@encryptedmail.anonaddy.com"
+                id="navbar-contact"
+              >
+                Contact us
+              </a>
             </Navbar>{" "}
           </header>
           <div
@@ -259,7 +265,7 @@ function App() {
                 <div className="center-contents">
                   <span>
                     <Link to="/about" className="not-real-site-txt">
-                      This is not a real website, read more in our about page
+                      This is a portfolio project, read more in our about page
                     </Link>{" "}
                   </span>
                 </div>

@@ -74,6 +74,7 @@ export default function HomePage() {
         <br></br>
         <br></br>
         <h1>Categories</h1>
+        <h2>Under Construction</h2>
       </Container>
     </>
   );

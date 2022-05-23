@@ -139,7 +139,7 @@ export default function SearchResultsPage() {
           <Col md={3}>
             <h4>Department</h4>
             <div>
-              <ul>
+              <ul className="search-page-sidebar">
                 <li>
                   <Link
                     id="turquoise"
@@ -164,7 +164,7 @@ export default function SearchResultsPage() {
             </div>
             <div>
               <h4>Price</h4>
-              <ul>
+              <ul className="search-page-sidebar">
                 <li>
                   <Link
                     id="turquoise"
@@ -189,7 +189,7 @@ export default function SearchResultsPage() {
             </div>
             <div>
               <h4>Customer Review</h4>
-              <ul>
+              <ul className="search-page-sidebar">
                 {ratings.map((r) => (
                   <li key={r.name}>
                     <Link

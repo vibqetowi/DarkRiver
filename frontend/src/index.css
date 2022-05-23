@@ -108,6 +108,19 @@ position: absolute;
 left: 5.5rem;
 bottom: 0.2rem;
 }
+
+#navbar-contact{
+     color: white;
+font-size: 1rem;
+text-decoration: none;
+position: absolute;
+left: 15.5rem;
+bottom: 0.2rem;
+}
+
+#navbar-contact:hover{
+  color: white;
+}
 .navbar-best-sellers-link:hover{
   color: white;
 }
@@ -617,6 +630,11 @@ td {
   boder:none;
   background-color: #111111;
 }
+
+#myface{
+    max-width: 100%;
+ object-fit: contain;
+}
 /* stuff from my man basir ---------------------------------- */
 
 .site-container {
@@ -775,10 +793,14 @@ button.thumbnail {
   background-color: black;
 }
 
-ul {
+.search-page-sidebar {
     list-style-type: none;
 }
 
+.about-page-list{
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
 #clear-filters{
   margin-left:0.5rem ;
   padding: none;
