@@ -445,7 +445,8 @@ p:hover {
 
 .d-hub {
   background-color: #ffc000;
-  padding: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   color: black;
   border-radius: 2rem;
   padding-top: none;
