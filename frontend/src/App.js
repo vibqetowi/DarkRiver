@@ -238,8 +238,7 @@ function App() {
                 <div className="center-contents">
                   <span>
                     <Link to="/about" className="not-real-site-txt">
-                      This is not a real website, read more in our{" "}
-                      <span className="amzn-link">about page</span>
+                      This is not a real website, read more in our about page
                     </Link>{" "}
                   </span>
                 </div>

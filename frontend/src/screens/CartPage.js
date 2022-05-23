@@ -49,7 +49,25 @@ export default function CartPage() {
 
       <Row style={{ minHeight: "400px" }}>
         <Col xl={8} className="black-bg">
-          {cartItems.length === 0 ? null : (
+          {cartItems.length === 0 ? (
+            <div className="col2">
+              <div className="screen-500px-stack">
+                <div className="cart-page-left-left-div">
+                  <img
+                    src="/images/shopNow.jpg"
+                    className="shop-now-img"
+                    alt="shop now"
+                  ></img>
+                </div>
+                <div className="cart-page-left-left-div">
+                  <h3>Your DarkRiver Cart is empty </h3> <br></br>
+                  <Link to="/" className="amzn-link ">
+                    Shop today's deal
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ) : (
             <>
               <ListGroup className="black-bg">
                 <Row>
@@ -126,7 +144,7 @@ export default function CartPage() {
                               variant="black-bg-white-txt"
                               className="turquoise"
                             >
-                           Delete
+                              Delete
                             </Button>
                           </div>
                         </div>
@@ -185,17 +203,4 @@ export default function CartPage() {
 }
 
 /*
- <div className="col2">
-              <div className="screen-500px-stack">
-                <div className="cart-page-left-left-div">
-                <img src="/images/shopNow.jpg" className="shop-now-img" alt="shop now"></img>
-              </div>
-              <div className="cart-page-left-left-div">
-                <h3>Your DarkRiver Cart is empty </h3> <br></br>
-                <Link to="/" className="amzn-link ">
-                  Shop today's deal
-                </Link>
-              </div>
-              </div>
-              
-            </div>*/
+*/

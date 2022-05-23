@@ -158,7 +158,15 @@ export default function ProductPage() {
               </div>
             </ListGroup.Item>
             <ListGroup.Item className="black-bg">
-              Price : ${product.price}
+              Price :<h3 className="colored-price">&nbsp;${product.price}</h3>
+              <br></br> &amp;{" "}
+              <a
+                className="turquoise"
+                href="https://www.amazon.com/gp/help/customer/display.html?nodeId=GNW5VKFXMF72FFMR"
+              >
+                {" "}
+                Free Returns, most of the time{" "}
+              </a>
             </ListGroup.Item>
             <ListGroup.Item className="black-bg">
               <p>option selector (ex:size) pending implementation</p>
@@ -180,7 +188,7 @@ export default function ProductPage() {
                       <div className="one-line-child">
                         {" "}
                         <a
-                          href="https://www.amazon.ca/gp/help/customer/display.html?nodeId=GGE5X8EV7VNVTK6R"
+                          href="https://www.amazon.com/gp/help/customer/display.html?nodeId=GGE5X8EV7VNVTK6R"
                           className="turquoise"
                         >
                           FREE delivery&nbsp;
@@ -253,13 +261,12 @@ export default function ProductPage() {
                     </div>
                   </div>
                   <div className="one-line-parent">
-                    <div className="one-line-child">and fulfilled by &nbsp;</div>
+                    <div className="one-line-child">
+                      and fulfilled by &nbsp;
+                    </div>
                     <div className="one-line-child">
                       {" "}
-                      <Link
-                        className="turquoise"
-                        to="/"
-                      >
+                      <Link className="turquoise" to="/">
                         <h6>DarkRiver</h6>
                       </Link>{" "}
                     </div>

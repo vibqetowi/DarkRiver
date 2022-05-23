@@ -370,9 +370,10 @@ h3 {
 
 #search-box{
   width:100%;
+  min-height: 2.7rem;
 }
 #search-box-inside{
-  background-color: #444444;
+  background-color: #333333;
   border: none;
   color: white;
 }
@@ -445,8 +446,8 @@ p:hover {
   color: white;
 }
 
-.aisleName:hover {
-  color: white;
+.colored-price{
+color: #ff8742;
 }
 
 .d-hub {
@@ -487,7 +488,7 @@ p:hover {
   margin: 1rem;
   margin-bottom: 2rem;
   color: black;
-  width: 80%;
+  width: fit-content;
 }
 
 .place-order-parent {
