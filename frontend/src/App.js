@@ -7,32 +7,38 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import HomePage from "./screens/HomePage";
-import ProductPage from "./screens/ProductPage";
-import CartPage from "./screens/CartPage";
+import HomePage from "./pages/HomePage";
+import ProductPage from "./pages/ProductPage";
+import CartPage from "./pages/CartPage";
 import { LinkContainer } from "react-router-bootstrap";
 import { Store } from "./Store";
 import { useContext } from "react";
-import SellerPage from "./screens/SellerPage";
-import LoginPage from "./screens/LoginPage";
-import ShippingPage from "./screens/ShippingPage";
-import SignupPage from "./screens/SignupPage";
-import PaymentMethodPage from "./screens/PaymentMethodPage";
-import AboutPage from "./screens/AboutPage";
-import OrderPage from "./screens/CheckoutPage";
-import OrderDetailsPage from "./screens/OrderDetailsPage";
-import OrderHistoryPage from "./screens/OrderHistoryPage";
-import UserProfilePage from "./screens/UserProfilePage";
+import SellerPage from "./pages/SellerPage";
+import LoginPage from "./pages/LoginPage";
+import ShippingPage from "./pages/ShippingPage";
+import SignupPage from "./pages/SignupPage";
+import PaymentMethodPage from "./pages/PaymentMethodPage";
+import AboutPage from "./pages/AboutPage";
+import OrderPage from "./pages/CheckoutPage";
+import OrderDetailsPage from "./pages/OrderDetailsPage";
+import OrderHistoryPage from "./pages/OrderHistoryPage";
+import UserProfilePage from "./pages/UserProfilePage";
 import { useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { getError } from "./utils";
 import { useState } from "react";
 import SearchBox from "./components/SearchBox";
-import SearchResultsPage from "./screens/SearchResultsPage";
-import UnderConstruction from "./screens/UnderConstruction";
+import SearchResultsPage from "./pages/SearchResultsPage";
+import UnderConstruction from "./pages/UnderConstruction";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRoute from "./components/AdminRoute";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminOrderList from "./pages/AdminOrderList";
+import AdminUserList from "./pages/AdminUserList";
+import AdminProductList from "./pages/AdminProductList";
+import AdminProductEdit from "./pages/AdminProductEdit";
+import AdminUserEdit from "./pages/AdminProductList";
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -308,7 +314,7 @@ function App() {
                   path="/admin/dashboard"
                   element={
                     <AdminRoute>
-                      <DashboardScreen />
+                      <AdminDashboard />
                     </AdminRoute>
                   }
                 ></Route>
@@ -316,7 +322,7 @@ function App() {
                   path="/admin/orders"
                   element={
                     <AdminRoute>
-                      <OrderListScreen />
+                      <AdminOrderList />
                     </AdminRoute>
                   }
                 ></Route>
@@ -324,7 +330,7 @@ function App() {
                   path="/admin/users"
                   element={
                     <AdminRoute>
-                      <UserListScreen />
+                      <AdminUserList />
                     </AdminRoute>
                   }
                 ></Route>
@@ -332,7 +338,7 @@ function App() {
                   path="/admin/products"
                   element={
                     <AdminRoute>
-                      <ProductListScreen />
+                      <AdminProductList/>
                     </AdminRoute>
                   }
                 ></Route>
@@ -340,7 +346,7 @@ function App() {
                   path="/admin/product/:id"
                   element={
                     <AdminRoute>
-                      <ProductEditScreen />
+                      <AdminProductEdit />
                     </AdminRoute>
                   }
                 ></Route>
@@ -348,7 +354,7 @@ function App() {
                   path="/admin/user/:id"
                   element={
                     <AdminRoute>
-                      <UserEditScreen />
+                      <AdminUserEdit />
                     </AdminRoute>
                   }
                 ></Route>
