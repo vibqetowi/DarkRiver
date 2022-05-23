@@ -371,6 +371,12 @@ h3 {
 #search-box{
   width:100%;
 }
+#search-box-inside{
+  background-color: #444444;
+  border: none;
+  color: white;
+}
+
 
 .btn-hello-sign-in {
   background-color: black;
@@ -577,6 +583,24 @@ td {
   transition: 0.5s;
 }
 
+
+.turquoise{
+  color: turquoise;
+  text-decoration: none;
+}
+
+#turquoise{
+  color: turquoise;
+  text-decoration: none;
+}
+
+#turquoise:hover{
+  color: #e89e4a;
+}
+
+.turquoise:hover{
+  color: #e89e4a;
+}
 /* stuff from my man basir ---------------------------------- */
 
 .site-container {
@@ -605,23 +629,6 @@ main {
   font-weight: bold;
 }
 
-.turquoise{
-  color: turquoise;
-  text-decoration: none;
-}
-
-#turquoise{
-  color: turquoise;
-  text-decoration: none;
-}
-
-#turquoise:hover{
-  color: #e89e4a;
-}
-
-.turquoise:hover{
-  color: #e89e4a;
-}
 
 .side-navbar {
   min-width: 250px;
@@ -633,6 +640,7 @@ main {
   background-color: #100901;
   transition: 0.5s;
   padding: 1rem;
+  padding-left: 1.5rem;
 }
 h1{
   color: white;
