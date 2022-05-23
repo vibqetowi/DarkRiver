@@ -31,6 +31,8 @@ import { useState } from "react";
 import SearchBox from "./components/SearchBox";
 import SearchResultsPage from "./screens/SearchResultsPage";
 import UnderConstruction from "./screens/UnderConstruction";
+import ProtectedRoute from "./components/ProtectedRoute";
+import AdminRoute from "./components/AdminRoute";
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -143,7 +145,6 @@ function App() {
                                     {" "}
                                     Hello, Sign in &nbsp;{" "}
                                   </div>
-                               
                                 </div>
                               </div>
                               <div className="one-line-when-collapse-child">
@@ -154,7 +155,6 @@ function App() {
                                       <b>Account &amp; Lists</b>
                                     </h6>
                                   </div>
-            
                                 </div>
                               </div>
                             </div>
@@ -162,7 +162,22 @@ function App() {
                         </Link>
                       </>
                     )}
-
+                    {userInfo && userInfo.isAdmin && (
+                      <NavDropdown title="Admin" id="admin-nav-dropdown">
+                        <LinkContainer to="/admin/dashboard">
+                          <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/admin/products">
+                          <NavDropdown.Item>Products</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/admin/orders">
+                          <NavDropdown.Item>Orders</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/admin/users">
+                          <NavDropdown.Item>Users</NavDropdown.Item>
+                        </LinkContainer>
+                      </NavDropdown>
+                    )}
                     <Link to="/cart" className="nav-link">
                       <div className="cart-logo-container">
                         <div className="one-line-child">
@@ -257,14 +272,86 @@ function App() {
                 <Route path="/payment" element={<PaymentMethodPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/checkout" element={<OrderPage />} />
-                <Route path="/order/:id" element={<OrderDetailsPage />} />
-                <Route path="/order/history" element={<OrderHistoryPage />} />
-                <Route path="/profile" element={<UserProfilePage />} />
+                <Route
+                  path="/order/:id"
+                  element={
+                    <ProtectedRoute>
+                      <OrderDetailsPage />
+                    </ProtectedRoute>
+                  }
+                ></Route>
+                <Route
+                  path="/order/history"
+                  element={
+                    <ProtectedRoute>
+                      <OrderHistoryPage />
+                    </ProtectedRoute>
+                  }
+                ></Route>
+                <Route
+                  path="/profile"
+                  element={
+                    <ProtectedRoute>
+                      <UserProfilePage />
+                    </ProtectedRoute>
+                  }
+                />
+
                 <Route path="/search" element={<SearchResultsPage />} />
                 <Route
                   path="/underConstruction"
                   element={<UnderConstruction />}
                 />
+
+                {/* Admin Routes */}
+                <Route
+                  path="/admin/dashboard"
+                  element={
+                    <AdminRoute>
+                      <DashboardScreen />
+                    </AdminRoute>
+                  }
+                ></Route>
+                <Route
+                  path="/admin/orders"
+                  element={
+                    <AdminRoute>
+                      <OrderListScreen />
+                    </AdminRoute>
+                  }
+                ></Route>
+                <Route
+                  path="/admin/users"
+                  element={
+                    <AdminRoute>
+                      <UserListScreen />
+                    </AdminRoute>
+                  }
+                ></Route>
+                <Route
+                  path="/admin/products"
+                  element={
+                    <AdminRoute>
+                      <ProductListScreen />
+                    </AdminRoute>
+                  }
+                ></Route>
+                <Route
+                  path="/admin/product/:id"
+                  element={
+                    <AdminRoute>
+                      <ProductEditScreen />
+                    </AdminRoute>
+                  }
+                ></Route>
+                <Route
+                  path="/admin/user/:id"
+                  element={
+                    <AdminRoute>
+                      <UserEditScreen />
+                    </AdminRoute>
+                  }
+                ></Route>
               </Routes>
             </Container>
           </main>

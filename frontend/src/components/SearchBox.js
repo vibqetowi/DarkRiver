@@ -19,7 +19,6 @@ export default function SearchBox() {
         <FormControl
           type="text"
           name="q"
-          id="q"
           onChange={(e) => setQuery(e.target.value)}
           placeholder="explore the depths..."
           aria-label="Search Products"
