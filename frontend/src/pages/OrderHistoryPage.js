@@ -95,12 +95,12 @@ export default function OrderHistoryPage() {
                   <td>
                     <Button
                       type="button"
-                      variant="amzn"
+                      variant={order.isPaid ? "amzn" : "pay-now"}
                       onClick={() => {
                         navigate(`/order/${order._id}`);
                       }}
                     >
-                      Details
+                      {order.isPaid ? "View" : "Pay"}
                     </Button>
                   </td>
                 </tr>

@@ -59,6 +59,16 @@ main {
   font-size: auto;
   margin-bottom: 0.5rem;}
 
+  .btn-pay-now{
+   background-color: red;
+  color: black;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: auto;
+  margin-bottom: 0.5rem;}
+
+
 .btn-yellow-black-txt-wide {
   background-color: #ffc000;
   color: black;
@@ -637,6 +647,14 @@ td {
  padding: 1rem;
  padding-top: none;
 }
+
+#paypal-container{
+  background-color: white;
+  padding: 1rem;
+border-radius: 2rem;
+}
+
+
 /* stuff from my man basir ---------------------------------- */
 
 .site-container {
@@ -654,6 +672,11 @@ main {
 .thumbnail {
   height: 8rem;
   width: 8rem;
+}
+
+.thumbnail-txt{
+  max-width: 8rem;
+  white-space: normal;
 }
 
 .cart-img {

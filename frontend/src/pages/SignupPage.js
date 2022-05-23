@@ -104,7 +104,7 @@ export default function SignupPage() {
             </Link>
           </div>
         </Form>
-        <p>hCaptcha pending implementation, it works but has no effect of acess</p>
+        <p>hCaptcha pending implementation, it works but has no effect of access</p>
       </div>
     </Container>
   );

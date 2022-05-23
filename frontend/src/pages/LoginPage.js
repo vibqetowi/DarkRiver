@@ -75,7 +75,7 @@ export default function LoginPage() {
         </div>
         <HCaptchaForm></HCaptchaForm>
         <p>
-          hCaptcha pending implementation, it works but has no effect of acess
+          hCaptcha pending implementation, it works but has no effect of access
         </p>
 
         <div className="mb-3">

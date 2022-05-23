@@ -235,7 +235,7 @@ export default function OrderPage() {
               </Card.Text>
               {order.isPaid ? (
                 <MessageBox variant="success">
-                  Paid at {order.paidAt}
+                  Paid {order.paidAt.substring(0, 10)}
                 </MessageBox>
               ) : (
                 <MessageBox variant="danger">Not Paid</MessageBox>
@@ -251,7 +251,7 @@ export default function OrderPage() {
                   <ListGroup.Item key={item._id} className="black-bg">
                     <Row className="align-items-center">
                       <Col md={6}>
-                        <Link to={`/${item.name}/dr/${item.slug}`}>
+                        <Link to={`/dr/${item.slug}`}>
                           {" "}
                           <img
                             src={item.image}
@@ -259,13 +259,15 @@ export default function OrderPage() {
                             className="thumbnail"
                           ></img>{" "}
                         </Link>
-
-                        <Link
-                          to={`/${item.name}/dr/${item.slug}`}
-                          className="normal-ass-white-txt"
-                        >
-                          {item.name}
-                        </Link>
+                        <div className="thumbnail-txt">
+                          {" "}
+                          <Link
+                            to={`/dr/${item.slug}`}
+                            className="normal-ass-white-txt"
+                          >
+                            {item.name}
+                          </Link>
+                        </div>
                       </Col>
                       <Col md={3}>
                         <span>
@@ -317,13 +319,19 @@ export default function OrderPage() {
                     {isPending ? (
                       <LoadingBox />
                     ) : (
-                      <div>
-                        <PayPalButtons
-                          createOrder={createOrder}
-                          onApprove={onApprove}
-                          onError={onError}
-                        ></PayPalButtons>
-                      </div>
+                      <>
+                        <div id="paypal-container">
+                          <PayPalButtons
+                            createOrder={createOrder}
+                            onApprove={onApprove}
+                            onError={onError}
+                          ></PayPalButtons>
+                        </div>
+                        <p>
+                          paypal: johndoe@dmail.com, psw jd123456. I'm using
+                          sandbox api and it does not always connect
+                        </p>
+                      </>
                     )}
                     {loadingPay && <LoadingBox></LoadingBox>}
                   </ListGroup.Item>
