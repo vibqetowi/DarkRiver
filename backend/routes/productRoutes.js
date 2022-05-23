@@ -26,6 +26,7 @@ productRouter.post(
       rating: 0,
       numReviews: 0,
       description: "sample description",
+      optionSelect:null,
       isBestSeller: false,
     });
     const product = await newProduct.save();
@@ -51,6 +52,7 @@ productRouter.put(
       product.countInStock = req.body.countInStock;
       product.description = req.body.description;
       product.isBestSeller = req.body.isBestSeller;
+      product.optionSelect=req.body.optionSelect;
       await product.save();
       res.send({ message: "Product Updated" });
     } else {

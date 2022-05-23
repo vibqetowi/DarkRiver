@@ -56,7 +56,6 @@ function App() {
     };
     fetchCategories();
   }, []);
-      
 
   return (
     <>
@@ -199,12 +198,6 @@ function App() {
                 : "side-navbar d-flex justify-content-between flex-wrap flex-column"
             }
           >
-            <i
-              class="fa fa-close"
-              id="close-sidebar"
-              onClick={() => setSidebarIsOpen(false)}
-            ></i>
-
             <Nav className="flex-column text-white w-100 p-2">
               <Nav.Item>
                 <br></br>

@@ -21044,7 +21044,7 @@
                                           xl: 5,
                                           children: [
                                             (0, Ke.jsx)(Qi.Link, {
-                                              to: "/product/".concat(e.slug),
+                                              to: "/dp/".concat(e.slug),
                                               className: "normal-ass-white-txt",
                                             }),
                                             (0, Ke.jsxs)("div", {
@@ -23952,7 +23952,7 @@
                                                           children: (0, Ke.jsx)(
                                                             Qi.Link,
                                                             {
-                                                              to: "/product/".concat(
+                                                              to: "/dp/".concat(
                                                                 e.slug
                                                               ),
                                                               children: (0,
@@ -23973,7 +23973,7 @@
                                                         "one-line-child-vertical-center",
                                                       children: [
                                                         (0, Ke.jsxs)(Qi.Link, {
-                                                          to: "/product/".concat(
+                                                          to: "/dp/".concat(
                                                             e.slug
                                                           ),
                                                           className:

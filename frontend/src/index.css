@@ -148,15 +148,26 @@ flex:1;
   color: white;
 }
 
+.g-2{
+  background-color: #000000;
+  color: white;
+}
 .black-bg {
   background-color: black;
   border-radius: 1rem;
+  color: white;
+  min-width: fit-content;
 }
 
 p {
   color: white;
+  /* make html respect \n characters */
+  white-space: pre-line
 }
 
+.reviews-div{
+  max-width: 800px;
+}
 .amzn-link {
   display: inline-block;
   font-size: auto;
@@ -215,8 +226,10 @@ p {
 }
 .img-large {
   border-radius: 1rem;
-  justify-self: flex-end;
-  max-width: 100%;
+  justify-self: flex-start;
+width: 100%;
+  object-fit: scale-down;
+  max-height: 70%;
 }
 
 .white-txt {
@@ -300,14 +313,6 @@ h3 {
   white-space: nowrap;
 }
 
-.img-fluid {
-  background-color: black;
-  border: black;
-  max-height: 350px;
-  object-fit: cover;
-  width: 100%;
-  margin-top: 1rem;
-}
 
 .cart-page-h1-txt {
   padding: 0px;
@@ -560,6 +565,10 @@ td {
   display: grid;
 }
 
+#basic-nav-dropdown{
+  transition: 0.5s;
+}
+
 /* stuff from my man basir ---------------------------------- */
 
 .site-container {
@@ -574,8 +583,9 @@ main {
   color: #000000;
 }
 
-.img-thumbnail {
-  height: 80px;
+.thumbnail {
+  height: 8rem;
+  width: 8rem;
 }
 
 /* sidebar */
@@ -583,12 +593,18 @@ main {
   font-weight: bold;
 }
 .side-navbar {
-  width: 250px;
+  min-width: 250px;
+  width: 40%;
+  max-width: 500px;
   height: 100%;
   position: absolute;
-  left: -300px;
+  left: -100rem;
   background-color: #100901;
   transition: 0.5s;
+  padding: 1rem;
+}
+h1{
+  color: white;
 }
 
 #close-sidebar{
@@ -620,10 +636,46 @@ color: black;
 .active-nav {
   left: 0;
   z-index: 999;
-    filter:brightness(300%);
 }
 .text-bold {
   font-weight: bold;
+}
+
+
+.btn-primary,
+.btn-outline-primary {
+  background-color: #f0c040;
+  color: #000000;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rating span {
+  color: #ffc000;
+}
+
+.product {
+  border: 1px #404040 solid;
+  margin: 1rem;
+}
+.product img {
+  width: 100%;
+  max-width: 400px;
+}
+.product-info {
+  padding: 1rem;
+}
+.img-large {
+  max-width: 100%;
+}
+.img-thumbnail {
+  height: 80px;
+}
+.small-container {
+  max-width: 600px;
 }
 
 /* Map */

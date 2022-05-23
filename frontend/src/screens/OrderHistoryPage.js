@@ -57,7 +57,6 @@ export default function OrderHistoryPage() {
       </Helmet>
 
       <h1>Under construction</h1>
-      <h2>Issue: not responsive</h2>
       <div className="rounded-border-black-bg">
         <h1>Order History</h1>
         {loading ? (

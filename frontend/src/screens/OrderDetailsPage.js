@@ -197,9 +197,9 @@ export default function OrderScreen() {
         <title>Order {orderId}</title>
       </Helmet>
       <h1 className="my-3">Order {orderId}</h1>
-      <Row>
-        <Col md={8}>
-          <Card className="mb-3">
+      <Row className="rounded-border-black-bg">
+        <Col md={7}>
+          <Card className="black-bg">
             <Card.Body>
               <Card.Title>Shipping</Card.Title>
               <Card.Text>
@@ -227,7 +227,7 @@ export default function OrderScreen() {
               )}
             </Card.Body>
           </Card>
-          <Card className="mb-3">
+          <Card className="black-bg">
             <Card.Body>
               <Card.Title>Payment</Card.Title>
               <Card.Text>
@@ -243,25 +243,35 @@ export default function OrderScreen() {
             </Card.Body>
           </Card>
 
-          <Card className="mb-3">
+          <Card className="black-bg">
             <Card.Body>
               <Card.Title>Items</Card.Title>
               <ListGroup variant="flush">
                 {order.orderItems.map((item) => (
-                  <ListGroup.Item key={item._id}>
+                  <ListGroup.Item key={item._id} className="black-bg">
                     <Row className="align-items-center">
                       <Col md={6}>
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="img-fluid rounded img-thumbnail"
-                        ></img>{" "}
-                        <Link to={`/product/${item.slug}`}>{item.name}</Link>
+                        <Link to={`/dp/${item.slug}`}>
+                          {" "}
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="thumbnail"
+                          ></img>{" "}
+                        </Link>
+
+                        <Link
+                          to={`/dp/${item.slug}`}
+                          className="normal-ass-white-txt"
+                        >
+                          {item.name}
+                        </Link>
                       </Col>
                       <Col md={3}>
-                        <span>{item.quantity}</span>
+                        <span>
+                          ${item.price}&nbsp; X&nbsp;{item.quantity}
+                        </span>
                       </Col>
-                      <Col md={3}>${item.price}</Col>
                     </Row>
                   </ListGroup.Item>
                 ))}
@@ -270,29 +280,29 @@ export default function OrderScreen() {
           </Card>
         </Col>
         <Col md={4}>
-          <Card className="mb-3">
+          <Card className="black-bg">
             <Card.Body>
               <Card.Title>Order Summary</Card.Title>
               <ListGroup variant="flush">
-                <ListGroup.Item>
+                <ListGroup.Item className="black-bg">
                   <Row>
                     <Col>Items</Col>
                     <Col>${order.itemsPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item className="black-bg">
                   <Row>
                     <Col>Shipping</Col>
                     <Col>${order.shippingPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item className="black-bg">
                   <Row>
                     <Col>Tax</Col>
                     <Col>${order.taxPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item className="black-bg">
                   <Row>
                     <Col>
                       <strong> Order Total</strong>
@@ -303,7 +313,7 @@ export default function OrderScreen() {
                   </Row>
                 </ListGroup.Item>
                 {!order.isPaid && (
-                  <ListGroup.Item>
+                  <ListGroup.Item className="black-bg">
                     {isPending ? (
                       <LoadingBox />
                     ) : (

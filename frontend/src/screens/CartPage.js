@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext,  } from "react";
+import { useContext } from "react";
 import {
   Button,
   Card,
@@ -12,7 +12,6 @@ import {
 import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
 import { Store } from "../Store";
-
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -50,22 +49,7 @@ export default function CartPage() {
 
       <Row style={{ minHeight: "400px" }}>
         <Col xl={8} className="black-bg">
-          {cartItems.length === 0 ? (
-            <div className="col2">
-              <div className="screen-500px-stack">
-                <div className="cart-page-left-left-div">
-                <img src="/images/shopNow.jpg" className="shop-now-img" alt="shop now"></img>
-              </div>
-              <div className="cart-page-left-left-div">
-                <h3>Your DarkRiver Cart is empty </h3> <br></br>
-                <Link to="/" className="amzn-link ">
-                  Shop today's deal
-                </Link>
-              </div>
-              </div>
-              
-            </div>
-          ) : (
+          {cartItems.length === 0 ? null : (
             <>
               <ListGroup className="black-bg">
                 <Row>
@@ -91,7 +75,7 @@ export default function CartPage() {
                       </Col>
                       <Col xl={5}>
                         <Link
-                          to={`/product/${item.slug}`}
+                          to={`/dp/${item.slug}`}
                           className="normal-ass-white-txt"
                         ></Link>
                         <div className="one-line-parent">
@@ -190,3 +174,19 @@ export default function CartPage() {
     </Container>
   );
 }
+
+/*
+ <div className="col2">
+              <div className="screen-500px-stack">
+                <div className="cart-page-left-left-div">
+                <img src="/images/shopNow.jpg" className="shop-now-img" alt="shop now"></img>
+              </div>
+              <div className="cart-page-left-left-div">
+                <h3>Your DarkRiver Cart is empty </h3> <br></br>
+                <Link to="/" className="amzn-link ">
+                  Shop today's deal
+                </Link>
+              </div>
+              </div>
+              
+            </div>*/

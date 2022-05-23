@@ -52,12 +52,13 @@ export default function PaymentMethodPage() {
             <div className="mb-3">
               <Form.Check
                 type="radio"
-                id="Stripe"
-                label="Stripe"
-                value="Stripe"
-                checked={paymentMethodName === "Stripe"}
+                id="Gift Card"
+                label="Gift Card"
+                value="Gift Card"
+                checked={paymentMethodName === "Gift Card"}
                 onChange={(e) => setPaymentMethod(e.target.value)}
               />
+              <p>gift card not yet implemented</p>
             </div>
             <div className="mb-3">
               <Button variant="yellow-black-txt-wide" type="submit">
