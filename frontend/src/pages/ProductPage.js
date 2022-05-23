@@ -18,6 +18,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { toast } from "react-toastify";
 import { Container } from "react-bootstrap";
 import { ListGroupItem } from "react-bootstrap";
+import ratings_dist from "./ratings_dist.jpg";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -280,10 +281,16 @@ export default function ProductPage() {
       <Row>
         {" "}
         <Col md={4}>
-          <p>review distribution pending implementation</p>
+          <div id="rating-distribution-temp">
+            {" "}
+            <h2 ref={reviewsRef}>Customer Reviews</h2>
+            <p>
+              review distribution pending implementation, this is just an image
+            </p>
+            <img src={ratings_dist} alt="rating distribution img"></img>
+          </div>
         </Col>
         <Col md={8}>
-          <h2 ref={reviewsRef}>Reviews</h2>
           <div className="my-3">
             {userInfo ? (
               <form onSubmit={submitHandler}>
@@ -326,7 +333,7 @@ export default function ProductPage() {
             ) : (
               <MessageBox>
                 Please{" "}
-                <Link to={`/login?redirect=/dp/${product.slug}`}>Sign In</Link>{" "}
+                <Link to={`/login?redirect=/dr/${product.slug}`}>Sign In</Link>{" "}
                 to write a review
               </MessageBox>
             )}

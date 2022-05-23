@@ -270,7 +270,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/cart" element={<CartPage />} />
-                <Route path="/dp/:slug" element={<ProductPage />} />
+                <Route path="/dr/:slug" element={<ProductPage />} />
                 <Route path="/seller/:brand" element={<SellerPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/shipping" element={<ShippingPage />} />
@@ -338,7 +338,7 @@ function App() {
                   path="/admin/products"
                   element={
                     <AdminRoute>
-                      <AdminProductList/>
+                      <AdminProductList />
                     </AdminRoute>
                   }
                 ></Route>

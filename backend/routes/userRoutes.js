@@ -16,6 +16,7 @@ userRouter.get(
   })
 );
 
+//search user
 userRouter.get(
   '/:id',
   isAuth,
@@ -30,6 +31,7 @@ userRouter.get(
   })
 );
 
+//update user
 userRouter.put(
   '/:id',
   isAuth,
@@ -66,8 +68,10 @@ userRouter.delete(
     }
   })
 );
+
+//login
 userRouter.post(
-  '/',
+  '/login',
   expressAsyncHandler(async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
@@ -83,6 +87,7 @@ userRouter.post(
       }
     }
     res.status(401).send({ message: 'Invalid email or password' });
+    res.status(404).send({message: "I messed up sorry"});
   })
 );
 

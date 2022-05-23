@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import { Store } from "../Store";
 import { getError } from "../utils";
 import { toast } from "react-toastify";
+import HCaptchaForm from "../components/HcaptchaForm";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -72,6 +73,9 @@ export default function LoginPage() {
             </Button>
           </div>
         </div>
+        <HCaptchaForm></HCaptchaForm>
+        <p>hCaptcha pending implementation, just skip it</p>
+
         <div className="mb-3">
           New customer?{" "}
           <Link to={`/signup?redirect=${redirect}`} className="amzn-link ">

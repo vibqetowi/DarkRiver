@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from 'react';
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
+import HCaptchaForm from '../components/HcaptchaForm';
 
 
 export default function SignupPage() {
@@ -95,6 +96,7 @@ export default function SignupPage() {
               </Button>
             </div>
           </div>
+          <HCaptchaForm></HCaptchaForm>
           <div className="mb-3">
             Already have an account?{" "}
             <Link className="amzn-link" to={`/login?redirect=${redirect}`}>
@@ -102,6 +104,7 @@ export default function SignupPage() {
             </Link>
           </div>
         </Form>
+        <p>hCaptcha pending implementation, just skip it</p>
       </div>
     </Container>
   );

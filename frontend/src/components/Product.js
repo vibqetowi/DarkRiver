@@ -25,13 +25,13 @@ function Product(props) {
   const { product } = props;
   return (
     <Card bg={"dark"} className="prod-card">
-      <Link to={`/dp/${product.slug}`}>
+      <Link to={`/dr/${product.slug}`}>
         <img src={product.image} className="card-img-top" alt={product.name} />
       </Link>
       <Card.Body>
-        <Link className="prodName" to={`/dp/${product.slug}`}>
+        <Link className="prodName" to={`/dr/${product.slug}`}>
           <Card.Title style={{ fontSize: "1em" }}>
-            <p className={product.isBestseller? "turquoise" : null}>
+            <p className={product.isBestseller ? "turquoise" : null}>
               {product.name}
             </p>
           </Card.Title>

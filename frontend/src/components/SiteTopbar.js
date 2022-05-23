@@ -52,7 +52,7 @@ export default function SiteTopbar() {
             </Link>
           </NavDropdown>
         ) : (
-          <Link className="nav-link" to="/signin">
+          <Link className="nav-link" to="/login">
             <Button variant="returns-and-orders">
               Hello, Sign in <br></br>
               <h6>

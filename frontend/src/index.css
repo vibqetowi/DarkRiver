@@ -602,6 +602,21 @@ td {
 .turquoise:hover{
   color: #e89e4a;
 }
+
+
+#greyed-out{
+  filter:grayscale();
+}
+
+#rating-distribution-temp img{
+  max-width: 100%;
+ object-fit: contain;
+}
+
+#hcaptcha{
+  boder:none;
+  background-color: #111111;
+}
 /* stuff from my man basir ---------------------------------- */
 
 .site-container {
@@ -655,9 +670,6 @@ font-size: 60px;
 color: black;
 }
 
-#greyed-out{
-  filter:grayscale();
-}
 #close-sidebar:hover{
   background-color: black;
   color: white;
@@ -665,7 +677,6 @@ color: black;
   left: 245px;
   top:0;
 }
-
 
 .site-container {
   transition: 0.4s;
@@ -682,19 +693,10 @@ color: black;
 }
 
 
-.btn-primary,
-.btn-outline-primary {
-  background-color: #f0c040;
-  color: #000000;
-}
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.rating span {
-  color: #ffc000;
 }
 
 .product {

@@ -251,7 +251,7 @@ export default function OrderPage() {
                   <ListGroup.Item key={item._id} className="black-bg">
                     <Row className="align-items-center">
                       <Col md={6}>
-                        <Link to={`/dp/${item.slug}`}>
+                        <Link to={`/${item.name}/dr/${item.slug}`}>
                           {" "}
                           <img
                             src={item.image}
@@ -261,7 +261,7 @@ export default function OrderPage() {
                         </Link>
 
                         <Link
-                          to={`/dp/${item.slug}`}
+                          to={`/${item.name}/dr/${item.slug}`}
                           className="normal-ass-white-txt"
                         >
                           {item.name}

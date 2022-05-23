@@ -82,7 +82,7 @@ export default function CartPage() {
                   <ListGroup.Item className="black-bg" key={item._id}>
                     <Row className="align-items-center">
                       <Col xl={4} className="black-bg">
-                        <Link to={`/dp/${item.slug}`}>
+                        <Link to={`dr${item.slug}`}>
                           {" "}
                           <img
                             src={item.image}
@@ -93,7 +93,7 @@ export default function CartPage() {
                       </Col>
                       <Col xl={5}>
                         <Link
-                          to={`/dp/${item.slug}`}
+                          to={`/${item.name}/dr/${item.slug}`}
                           className="normal-ass-white-txt"
                         ></Link>
                         <div className="one-line-parent">
