@@ -378,8 +378,11 @@ h3 {
   text-align: left;
   width: fit-content;
   margin-right: 1rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   max-height: 5rem;
+}
+.btn-hello-sign-in h6{
+    font-size: 0.9rem;
 }
 .cart-logo-container {
   padding-bottom: none;

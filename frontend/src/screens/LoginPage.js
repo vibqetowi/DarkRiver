@@ -82,6 +82,7 @@ export default function LoginPage() {
       <br></br>
       <p>Customer demo: johndoe@dmail.com, psw:jd123456</p>
       <p>Admin demo: admin@darkriver.com, psw:123456 (under construction)</p>
+      <p>seller menu pending implementation</p>
     </Container>
   );
 }

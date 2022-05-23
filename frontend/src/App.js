@@ -30,6 +30,7 @@ import { getError } from "./utils";
 import { useState } from "react";
 import SearchBox from "./components/SearchBox";
 import SearchResultsPage from "./screens/SearchResultsPage";
+import UnderConstruction from "./screens/UnderConstruction";
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -137,12 +138,24 @@ function App() {
                           <Button variant="hello-sign-in">
                             <div className="one-line-when-collapse-parent">
                               <div className="one-line-when-collapse-child">
-                                Hello, Sign in &nbsp; <br />
+                                <div className="one-line-parent">
+                                  <div className="one-line-child">
+                                    {" "}
+                                    Hello, Sign in &nbsp;{" "}
+                                  </div>
+                               
+                                </div>
                               </div>
                               <div className="one-line-when-collapse-child">
-                                <h6>
-                                  <b>Account &amp; Lists</b>
-                                </h6>
+                                <div className="one-line-parent">
+                                  <div className="one-line-child">
+                                    {" "}
+                                    <h6>
+                                      <b>Account &amp; Lists</b>
+                                    </h6>
+                                  </div>
+            
+                                </div>
                               </div>
                             </div>
                           </Button>
@@ -182,10 +195,13 @@ function App() {
               >
                 <i className="fas fa-bars"></i> All
               </Button>
-              <Link to="/" className="navbar-prime-link">
+              <Link to="/underConstruction" className="navbar-prime-link">
                 Prime
               </Link>
-              <Link to="/" className="navbar-best-sellers-link">
+              <Link
+                to="/underConstruction"
+                className="navbar-best-sellers-link"
+              >
                 Best Sellers
               </Link>
             </Navbar>{" "}
@@ -246,6 +262,10 @@ function App() {
                 <Route path="/order/history" element={<OrderHistoryPage />} />
                 <Route path="/profile" element={<UserProfilePage />} />
                 <Route path="/search" element={<SearchResultsPage />} />
+                <Route
+                  path="/underConstruction"
+                  element={<UnderConstruction />}
+                />
               </Routes>
             </Container>
           </main>
