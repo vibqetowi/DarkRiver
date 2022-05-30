@@ -194,10 +194,11 @@ export default function OrderPage() {
   ) : (
     <div>
       <Helmet>
-        <title>Order {orderId}</title>
+        <title>Order #{orderId}</title>
       </Helmet>
-      <h1 className="my-3">Order {orderId}</h1>
+
       <Row className="rounded-border-black-bg">
+        <h2 className="my-3">Order #{orderId}</h2>
         <Col md={7}>
           <Card className="black-bg">
             <Card.Body>

@@ -265,7 +265,7 @@ function App() {
                 <div className="center-contents">
                   <span>
                     <Link to="/about" className="not-real-site-txt">
-                      This is a portfolio project, read more in our about page
+                      This is a portfolio project, click to read more
                     </Link>{" "}
                   </span>
                 </div>
