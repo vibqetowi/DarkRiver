@@ -2,7 +2,7 @@
 
 https://darkriver.herokuapp.com
 
-Simulated ecommerce website built on MERN stack and there's Paypal integration because I can.
+Simulated ecommerce website built on MERN stack
 The design is loosely inspired by the idea of a dark-themed Amazon.
 
 Currently working: customer login, cart, checkout, paypal payment, product search.
