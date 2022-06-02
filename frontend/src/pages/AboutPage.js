@@ -1,7 +1,7 @@
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
-import myface from "./formal.jpeg";
+import myface from "./formal_cloaked.png";
 import comp249 from "../pdf/Comp249.pdf";
 import comp352 from "../pdf/COMP352.pdf";
 import soen228 from "../pdf/SOEN228.pdf";
