@@ -19,7 +19,7 @@ export default function AboutPage() {
         </Col>
         <Col md={8}>
           <h6>
-            My name is Huynh Minh and I am a first year Software Engineering
+            My name is Huynh Minh and I am a second year Software Engineering
             student at Concordia University.<br></br>
             <br></br>The goal of this project is to create a fully functional
             ecommerce website using the MERN stack (MongoDB, Express, React,
