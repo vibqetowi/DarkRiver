@@ -12,3 +12,6 @@ Not implemented: footer, admin menu, seller menu, some css, some links just lead
 This is not a real website and needless to say, do not enter any real information on the site.
 
 update: sometime in 2022 heroku shut down free accounts so the website is dead, also I didnt't save my env variables so it doesn't work on local host right now
+
+###preview:
+<img width="424" alt="image" src="https://user-images.githubusercontent.com/101823343/214951156-9a1d3a95-a38e-40ff-bdef-4bb25ebf4547.png">
