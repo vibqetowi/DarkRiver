@@ -259,7 +259,7 @@ function App() {
               ))}
             </Nav>
           </div>
-          
+
           <main>
             <div className="center-contents">
               <div className="disclaimer">
